@@ -5,7 +5,8 @@ import { componentTagger } from "lovable-tagger";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: "./", // هذا هو السطر الذي أضفناه لحل مشكلة الصفحة البيضاء
+  // تم تعديل المسار ليتناسب مع اسم المستودع الجديد لضمان ظهور الموقع
+  base: "/GiteAubergeZahiBouiblane/", 
   server: {
     host: "::",
     port: 8080,
