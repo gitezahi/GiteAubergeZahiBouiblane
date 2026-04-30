@@ -1,6 +1,9 @@
-import { MapPin, Phone, Mail, CloudSun } from "lucide-react";
+import { MapPin, Phone, Mail, CloudSun, Navigation } from "lucide-react";
 
 export function ContactMap() {
+  // رابط المشاركة المباشر للمأوى على خرائط جوجل
+  const googleMapsUrl = "https://maps.app.goo.gl/3wG2UuD9S3EwG8zY9"; 
+
   return (
     <section id="contact" className="py-24 bg-white">
       <div className="container mx-auto px-4">
@@ -19,9 +22,19 @@ export function ContactMap() {
         <div className="grid lg:grid-cols-2 gap-8 items-start max-w-6xl mx-auto">
           {/* خريطة جوجل المباشرة للمأوى */}
           <div className="space-y-4">
-            <h3 className="flex items-center gap-2 font-bold text-lg text-olive mb-2">
-              <MapPin className="size-5" /> موقع المأوى على الخريطة
-            </h3>
+            <div className="flex items-center justify-between mb-2">
+              <h3 className="flex items-center gap-2 font-bold text-lg text-olive">
+                <MapPin className="size-5" /> موقع المأوى على الخريطة
+              </h3>
+              <a 
+                href={googleMapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs bg-olive text-white px-3 py-1 rounded-full flex items-center gap-1 hover:bg-olive/90 transition-all"
+              >
+                <Navigation className="size-3" /> توجيهات الطريق
+              </a>
+            </div>
             <div className="rounded-3xl overflow-hidden shadow-xl h-[400px] border border-border bg-muted">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3316.1841871044276!2d-4.0763428!3d33.781741499999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd9e5fd7862cffe9%3A0x29c0cfe32fd53d03!2z2K_Yp9ixINin2YTYttmK2KfZgdipINiy2KfZh9mKIEfDrnRlIEF1YmVyZ2UgemFoaQ!5e0!3m2!1sar!2sma!4v1777470853398!5m2!1sar!2sma"
@@ -35,7 +48,7 @@ export function ContactMap() {
             </div>
           </div>
 
-          {/* خريطة الطقس الحية - Windy المعدلة لتعمل بدون حجب */}
+          {/* خريطة الطقس الحية - Windy */}
           <div className="space-y-4">
             <h3 className="flex items-center gap-2 font-bold text-lg text-olive mb-2">
               <CloudSun className="size-5" /> حالة الطقس في بويبلان
@@ -52,7 +65,7 @@ export function ContactMap() {
           </div>
         </div>
 
-        {/* بطاقات التواصل السريع المحدثة */}
+        {/* بطاقات التواصل السريع */}
         <div className="grid md:grid-cols-3 gap-6 mt-12 max-w-6xl mx-auto">
           <div className="bg-gradient-cream p-6 rounded-2xl border border-olive/10 flex items-center gap-4">
             <div className="size-12 bg-white rounded-xl flex items-center justify-center shadow-sm">
@@ -76,15 +89,20 @@ export function ContactMap() {
             </div>
           </div>
 
-          <div className="bg-gradient-cream p-6 rounded-2xl border border-olive/10 flex items-center gap-4">
+          <a 
+            href={googleMapsUrl} 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="bg-gradient-cream p-6 rounded-2xl border border-olive/10 flex items-center gap-4 hover:shadow-md transition-shadow cursor-pointer"
+          >
             <div className="size-12 bg-white rounded-xl flex items-center justify-center shadow-sm">
               <MapPin className="size-5 text-olive" />
             </div>
             <div>
-              <p className="text-xs text-muted-foreground">العنوان</p>
+              <p className="text-xs text-muted-foreground">العنوان (انقر للخرائط)</p>
               <p className="font-bold text-foreground text-sm">دوار تامطروشت، جبل بويبلان</p>
             </div>
-          </div>
+          </a>
         </div>
       </div>
     </section>
