@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import { useI18n } from "@/i18n/I18nContext";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { LocalClock } from "./LocalClock";
+import { Weather } from "@/components/ui/Weather"; // استيراد مكون الطقس المحدث
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import logo from "@/assets/logo.png";
-// استيراد المكون الجديد هنا
 import { NavHashLink } from 'react-router-hash-link';
 
 const NAV = [
@@ -40,7 +40,6 @@ export function Navbar() {
       )}
     >
       <div className="container mx-auto px-4 lg:px-8 h-16 lg:h-20 flex items-center justify-between gap-4">
-        {/* تغيير الرابط العلوي للعودة للأعلى بسلاسة */}
         <NavHashLink smooth to="/#top" className="flex items-center gap-2 group">
           <span className="size-12 lg:size-14 rounded-full bg-cream grid place-items-center shadow-card overflow-hidden ring-1 ring-border">
             <img src={logo} alt="Gîte Zahi Bouiblane" className="w-full h-full object-contain" />
@@ -65,10 +64,14 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          <div className="hidden xl:block">
+          {/* قسم الساعة والطقس في الشاشات الكبيرة */}
+          <div className="hidden xl:flex items-center gap-3">
             <LocalClock />
+            <Weather />
           </div>
+          
           <LanguageSwitcher />
+          
           <Button
             asChild
             size="sm"
@@ -83,6 +86,7 @@ export function Navbar() {
               {t("nav.book")}
             </a>
           </Button>
+
           <button
             className="lg:hidden p-2 text-foreground"
             onClick={() => setOpen(!open)}
@@ -93,7 +97,7 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* قائمة الموبايل المعدلة */}
+      {/* قائمة الموبايل */}
       {open && (
         <div className="lg:hidden bg-background/98 backdrop-blur-xl border-t border-border">
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
@@ -108,8 +112,9 @@ export function Navbar() {
                 {t(n.key)}
               </NavHashLink>
             ))}
-            <div className="pt-2">
+            <div className="pt-4 flex flex-col gap-3 px-3 border-t mt-2">
                <LocalClock />
+               <Weather />
             </div>
           </nav>
         </div>
