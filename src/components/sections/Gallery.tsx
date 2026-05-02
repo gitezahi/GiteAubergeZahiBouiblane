@@ -100,6 +100,6 @@ export function Gallery() {
         sources={images}
         sourceIndex={lightboxController.sourceIndex}
       />
-    </header>
+    </section>
   );
 }
