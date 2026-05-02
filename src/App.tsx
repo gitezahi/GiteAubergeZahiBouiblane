@@ -1,5 +1,6 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+// تغيير الاستيراد هنا من BrowserRouter إلى HashRouter
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -38,21 +39,20 @@ const App = () => (
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        {/* تم ضبط basename ليتوافق تماماً مع مسار GitHub Pages الخاص بك */}
-        <BrowserRouter basename="/GiteAubergeZahiBouiblane">
+        {/* الحل الجذري: استخدام HashRouter بدلاً من BrowserRouter */}
+        {/* لاحظ أننا لم نعد بحاجة لـ basename هنا لأن الهاش يتعامل مع المسارات تلقائياً */}
+        <HashRouter>
           <div className="flex flex-col min-h-screen">
             <AnnouncementBar />
             <Routes>
-              {/* إضافة عدة مسارات لضمان ظهور الصفحة الرئيسية تحت أي ظرف */}
+              {/* مسار واحد فقط للصفحة الرئيسية يكفي الآن */}
               <Route path="/" element={<Index />} />
-              <Route path="/index" element={<Index />} />
-              <Route path="/GiteAubergeZahiBouiblane" element={<Index />} />
               
-              {/* صفحة الخطأ تظهر فقط إذا كان المسار غير موجود تماماً */}
+              {/* أي مسار غير معروف سيوجه لصفحة 404 */}
               <Route path="*" element={<NotFound />} />
             </Routes>
           </div>
-        </BrowserRouter>
+        </HashRouter>
       </TooltipProvider>
     </I18nProvider>
   </QueryClientProvider>
