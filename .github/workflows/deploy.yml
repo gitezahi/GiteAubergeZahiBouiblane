@@ -21,12 +21,14 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install dependencies
-        # استمرار استخدام force لتجاوز تعارض النسخ الذي تم إصلاحه محلياً
-        run: npm install --force
+      - name: Clean Install
+        # حذف ملفات القفل القديمة وإعادة التثبيت من الصفر لضمان التوافق
+        run: |
+          rm -rf node_modules package-lock.json
+          npm install --force
 
       - name: Build
-        # التعديل الجديد: CI=false يمنع توقف البناء بسبب التحذيرات البسيطة
+        # تجاوز التحذيرات والقيود الصارمة
         run: CI=false npm run build
 
       - name: Upload artifact
