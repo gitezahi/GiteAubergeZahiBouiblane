@@ -47,7 +47,8 @@ export function Hero() {
               className="h-12 px-7 text-base bg-cream/70 backdrop-blur border-earth/30 hover:bg-cream"
             >
               <a href="#about">
-                {t("hero.scroll")}
+                {/* تم استبدال t("hero.scroll") بالنص المطلوب مباشرة */}
+                اكتشف ضيافتنا
                 <ArrowDown className="size-4" />
               </a>
             </Button>

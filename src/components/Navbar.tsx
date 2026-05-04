@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useI18n } from "@/i18n/I18nContext";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { LocalClock } from "./LocalClock";
-import { Weather } from "@/components/ui/Weather"; // استيراد مكون الطقس المحدث
+import { Weather } from "@/components/ui/Weather"; 
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -45,7 +45,8 @@ export function Navbar() {
             <img src={logo} alt="Gîte Zahi Bouiblane" className="w-full h-full object-contain" />
           </span>
           <span className="flex flex-col leading-tight">
-            <span className="font-bold text-foreground text-base lg:text-lg font-serif">مأوى زاهي بويبلان</span>
+            {/* تم تغيير المسمى هنا إلى دار الضيافة */}
+            <span className="font-bold text-foreground text-base lg:text-lg font-serif">دار الضيافة زاهي بويبلان</span>
             <span className="text-[10px] tracking-widest uppercase text-muted-foreground">Gîte Zahi Bouiblane</span>
           </span>
         </NavHashLink>
@@ -64,7 +65,6 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-2">
-          {/* قسم الساعة والطقس في الشاشات الكبيرة */}
           <div className="hidden xl:flex items-center gap-3">
             <LocalClock />
             <Weather />
@@ -97,7 +97,6 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* قائمة الموبايل */}
       {open && (
         <div className="lg:hidden bg-background/98 backdrop-blur-xl border-t border-border">
           <nav className="container mx-auto px-4 py-4 flex flex-col gap-1">
