@@ -22,20 +22,20 @@ export const translations: Record<Lang, Dict> = {
     "nav.quran": "القرآن الكريم",
     "nav.book": "احجز عبر واتساب",
 
-    "hero.tag": "مأوى زاهي بويبلان",
+    "hero.tag": "دار الضيافة زاهي بويبلان",
     "hero.title": "ملاذك الهادئ في قلب جبال الأطلس",
     "hero.subtitle": "",
     "hero.cta": "احجز إقامتك",
-    "hero.scroll": "اكتشف المأوى",
+    "hero.scroll": "اكتشف دار الضيافة",
 
     "about.kicker": "من نحن",
     "about.title": "ملاذك الهادئ في قلب جبال الأطلس",
-    "about.p1": "مرحباً بكم في مأوى زاهي، وجهتكم المثالية للاسترخاء واكتشاف سحر الأطلس المتوسط. نحن عائلة زاهي، نفتح لكم أبواب مأوانا المتواضع في قلب جبل بويبلان الشامخ، لنشارككم شغفنا بهذه المنطقة وتاريخها العريق.",
-    "about.p2": "انطلق مشروعنا من رغبتنا في تقديم تجربة ضيافة مغربية حقيقية، حيث نمزج بين بساطة الحياة الجبلية وراحة الاستقبال الأصيل. في مأوانا، لست مجرد زائر، بل أنت فرد من العائلة؛ تستمتع بوجباتنا التقليدية المحضرة بحب، وتستنشق هواء الغابات النقي، وتستكشف مسارات الجبال.",
+    "about.p1": "مرحباً بكم في دار الضيافة زاهي، وجهتكم المثالية للاسترخاء واكتشاف سحر الأطلس المتوسط. نحن عائلة زاهي، نفتح لكم أبواب دارنا في قلب جبل بويبلان الشامخ، لنشارككم شغفنا بهذه المنطقة وتاريخها العريق.",
+    "about.p2": "انطلق مشروعنا من رغبتنا في تقديم تجربة ضيافة مغربية حقيقية، حيث نمزج بين بساطة الحياة الجبلية وراحة الاستقبال الأصيل. في دارنا، لست مجرد زائر، بل أنت فرد من العائلة؛ تستمتع بوجباتنا التقليدية المحضرة بحب، وتستنشق هواء الغابات النقي، وتستكشف مسارات الجبال.",
     "about.p3": "هدفنا هو توفير ملاذ هادئ لكل باحث عن السكينة بعيداً عن صخب المدينة، سواء كنت من عشاق التخييم، أو من محبي رياضة المشي الجبلي، أو ببساطة تريد الاستمتاع بجمال الثلوج والطبيعة الخلابة.",
 
     "services.kicker": "خدماتنا",
-    "services.title": "ندعوكم لاستكشاف أركان مأوانا بعيونكم",
+    "services.title": "ندعوكم لاستكشاف أركان دار الضيافة بعيونكم",
     "services.rooms.title": "دفء المكان",
     "services.rooms.desc": "إقامة مريحة بطابع جبلي يمنحكم الراحة والسكينة.",
     "services.table.title": "كرم المائدة",
@@ -46,7 +46,7 @@ export const translations: Record<Lang, Dict> = {
 
     "gallery.kicker": "معرض الصور والفيديو",
     "gallery.title": "نافذة على سحر بويبلان",
-    "gallery.desc": "هنا، الصور والفيديوهات ليست مجرد لقطات، بل هي نافذة تروي حكاية مأوى زاهي قبل أن تطأ أقدامكم أرض بويبلان. من بياض الثلوج التي تعانق قممنا شتاءً، إلى خضرة غابات الأرز في صيفنا الهادئ.",
+    "gallery.desc": "هنا، الصور والفيديوهات ليست مجرد لقطات، بل هي نافذة تروي حكاية دار الضيافة زاهي قبل أن تطأ أقدامكم أرض بويبلان. من بياض الثلوج التي تعانق قممنا شتاءً، إلى خضرة غابات الأرز في صيفنا الهادئ.",
 
     "why.kicker": "لماذا تختارنا",
     "why.title": "خمسة أسباب لتعيش التجربة معنا",
@@ -80,7 +80,7 @@ export const translations: Record<Lang, Dict> = {
     "book.cta": "احجز عبر واتساب",
     "book.phone": "0673552963",
 
-    "footer.tag": "مأوى زاهي بويبلان · المغرب",
+    "footer.tag": "دار الضيافة زاهي بويبلان · المغرب",
     "footer.follow": "تابعونا",
     "footer.rights": "جميع الحقوق محفوظة",
   },
@@ -95,7 +95,7 @@ export const translations: Record<Lang, Dict> = {
     "nav.quran": "Saint Coran",
     "nav.book": "Réserver",
 
-    "hero.tag": "Gîte Zahi Bouiblane",
+    "hero.tag": "Dar Diafa Zahi Bouiblane",
     "hero.title": "Votre refuge paisible au cœur de l'Atlas",
     "hero.subtitle": "",
     "hero.cta": "Réservez votre séjour",
@@ -103,12 +103,12 @@ export const translations: Record<Lang, Dict> = {
 
     "about.kicker": "À propos",
     "about.title": "Votre refuge paisible au cœur de l'Atlas",
-    "about.p1": "Bienvenue au Gîte Zahi, votre destination idéale pour vous détendre et découvrir le charme du Moyen Atlas. Nous sommes la famille Zahi et nous vous ouvrons les portes de notre humble refuge au cœur du majestueux Bouyablane.",
+    "about.p1": "Bienvenue à Dar Diafa Zahi, votre destination idéale pour vous détendre et découvrir le charme du Moyen Atlas. Nous sommes la famille Zahi et nous vous ouvrons les portes de notre demeure au cœur du majestueux Bouiblane.",
     "about.p2": "Notre projet est né du désir d'offrir une véritable expérience d'hospitalité marocaine, mêlant la simplicité de la vie montagnarde au confort d'un accueil authentique. Chez nous, vous n'êtes pas un simple visiteur, mais un membre de la famille.",
     "about.p3": "Notre but : offrir un refuge tranquille à tous ceux qui cherchent la sérénité loin du bruit, que vous soyez amateurs de camping, de randonnée, ou simplement désireux de profiter de la beauté de la neige et d'une nature spectaculaire.",
 
     "services.kicker": "Nos services",
-    "services.title": "Découvrez notre refuge",
+    "services.title": "Découvrez notre maison d'hôtes",
     "services.rooms.title": "Chaleur du lieu",
     "services.rooms.desc": "Un hébergement confortable au caractère montagnard, pour le repos et la sérénité.",
     "services.table.title": "Générosité de la table",
@@ -118,13 +118,13 @@ export const translations: Record<Lang, Dict> = {
     "services.note": "Chaque image est une invitation à vivre l'expérience.",
 
     "gallery.kicker": "Galerie",
-    "gallery.title": "Une fenêtre sur Bouyablane",
+    "gallery.title": "Une fenêtre sur Bouiblane",
     "gallery.desc": "Du blanc de la neige qui couronne nos sommets l'hiver, à la verdure des cédraies de l'été — voyez l'âme du lieu avant d'y poser le pied.",
 
     "why.kicker": "Pourquoi nous choisir",
-    "why.title": "Cinq raisons de vivre l'expérience",
+    "why.title": "Cinق raisons de vivre l'expérience",
     "why.1.title": "Position stratégique",
-    "why.1.desc": "Au cœur de Bouyablane : vues panoramiques et accès direct aux meilleurs sentiers.",
+    "why.1.desc": "Au cœur de Bouiblane : vues panoramiques et accès direct aux meilleurs sentiers.",
     "why.2.title": "Hospitalité familiale",
     "why.2.desc": "L'invité est de la famille. Un service personnel pour votre confort.",
     "why.3.title": "Cuisine traditionnelle",
@@ -135,8 +135,8 @@ export const translations: Record<Lang, Dict> = {
     "why.5.desc": "Idéal pour ceux qui recherchent le repos, loin du bruit et de la pollution.",
 
     "contact.kicker": "Contact & Carte",
-    "contact.title": "Bouyablane · Taza",
-    "contact.weather": "Météo à Bouyablane",
+    "contact.title": "Bouiblane · Taza",
+    "contact.weather": "Météo à Bouiblane",
     "contact.map": "Localisation Google Maps",
     "contact.openMap": "Ouvrir la carte",
     "contact.localTime": "Heure locale · Taza",
@@ -153,7 +153,7 @@ export const translations: Record<Lang, Dict> = {
     "book.cta": "Réserver sur WhatsApp",
     "book.phone": "0673552963",
 
-    "footer.tag": "Gîte Zahi · Bouyablane · Maroc",
+    "footer.tag": "Dar Diafa Zahi · Bouiblane · Maroc",
     "footer.follow": "Suivez-nous",
     "footer.rights": "Tous droits réservés",
   },
@@ -168,7 +168,7 @@ export const translations: Record<Lang, Dict> = {
     "nav.quran": "Holy Quran",
     "nav.book": "Book",
 
-    "hero.tag": "Zahi Shelter Bouiblane",
+    "hero.tag": "Dar Diafa Zahi Bouiblane",
     "hero.title": "Your peaceful haven in the heart of the Atlas",
     "hero.subtitle": "",
     "hero.cta": "Book your stay",
@@ -176,12 +176,12 @@ export const translations: Record<Lang, Dict> = {
 
     "about.kicker": "About us",
     "about.title": "Your peaceful haven in the heart of the Atlas",
-    "about.p1": "Welcome to Zahi Shelter, your ideal destination to relax and discover the charm of the Middle Atlas. We are the Zahi family, opening our humble shelter in the heart of majestic Bouyablane.",
+    "about.p1": "Welcome to Dar Diafa Zahi, your ideal destination to relax and discover the charm of the Middle Atlas. We are the Zahi family, opening our guest house in the heart of majestic Bouiblane.",
     "about.p2": "Our project began with a wish to offer a true Moroccan hospitality experience, blending the simplicity of mountain life with the comfort of authentic welcome. Here, you are not a visitor — you are family.",
     "about.p3": "Our goal: a quiet refuge for anyone seeking serenity far from city noise, whether you love camping, hiking, or simply enjoying snow and breathtaking nature.",
 
     "services.kicker": "Our services",
-    "services.title": "Explore the corners of our shelter",
+    "services.title": "Explore the corners of our guest house",
     "services.rooms.title": "Warmth of place",
     "services.rooms.desc": "A comfortable stay with mountain character — rest and serenity.",
     "services.table.title": "A generous table",
@@ -191,13 +191,13 @@ export const translations: Record<Lang, Dict> = {
     "services.note": "Every image here is an invitation to a real, unforgettable experience.",
 
     "gallery.kicker": "Gallery",
-    "gallery.title": "A window onto Bouyablane",
+    "gallery.title": "A window onto Bouiblane",
     "gallery.desc": "From the white of snow crowning our peaks in winter to the green of cedar forests in summer — see the soul of the place before you arrive.",
 
     "why.kicker": "Why choose us",
     "why.title": "Five reasons to live the experience",
     "why.1.title": "Strategic location",
-    "why.1.desc": "In the heart of Bouyablane: panoramic views and easy access to the best trails.",
+    "why.1.desc": "In the heart of Bouiblane: panoramic views and easy access to the best trails.",
     "why.2.title": "Family hospitality",
     "why.2.desc": "The guest is family. Personal service for your comfort and privacy.",
     "why.3.title": "Traditional dishes",
@@ -208,8 +208,8 @@ export const translations: Record<Lang, Dict> = {
     "why.5.desc": "Ideal for anyone seeking peace, away from noise and pollution.",
 
     "contact.kicker": "Contact & Map",
-    "contact.title": "Bouyablane · Taza",
-    "contact.weather": "Weather in Bouyablane",
+    "contact.title": "Bouiblane · Taza",
+    "contact.weather": "Weather in Bouiblane",
     "contact.map": "Google Maps location",
     "contact.openMap": "Open map",
     "contact.localTime": "Local time · Taza",
@@ -226,7 +226,7 @@ export const translations: Record<Lang, Dict> = {
     "book.cta": "Book on WhatsApp",
     "book.phone": "0673552963",
 
-    "footer.tag": "Zahi Shelter · Bouyablane · Morocco",
+    "footer.tag": "Dar Diafa Zahi · Bouiblane · Morocco",
     "footer.follow": "Follow us",
     "footer.rights": "All rights reserved",
   },
@@ -241,7 +241,7 @@ export const translations: Record<Lang, Dict> = {
     "nav.quran": "Sagrado Corán",
     "nav.book": "Reservar",
 
-    "hero.tag": "Refugio Zahi Bouiblane",
+    "hero.tag": "Dar Diafa Zahi Bouiblane",
     "hero.title": "Su refugio tranquilo en el corazón del Atlas",
     "hero.subtitle": "",
     "hero.cta": "Reserva tu estancia",
@@ -249,12 +249,12 @@ export const translations: Record<Lang, Dict> = {
 
     "about.kicker": "Nosotros",
     "about.title": "Su refugio tranquilo en el corazón del Atlas",
-    "about.p1": "Bienvenidos al Refugio Zahi, su destino ideal para relajarse y descubrir el encanto del Atlas Medio. Somos la familia Zahi y les abrimos las puertas de nuestro humilde refugio en el corazón del majestuoso Bouyablane.",
+    "about.p1": "Bienvenidos a Dar Diafa Zahi, su destino ideal para relajarse y descubrir el encanto del Atlas Medio. Somos la familia Zahi y les abrimos las puertas de nuestra casa de huéspedes en el corazón del majestuoso Bouiblane.",
     "about.p2": "Nuestro proyecto nació del deseo de ofrecer una verdadera experiencia de hospitalidad marroquí, mezclando la sencillez de la vida en la montaña con la comodidad de una acogida auténtica. Aquí no es un visitante, es de la familia.",
     "about.p3": "Nuestra meta: un refugio tranquilo para quienes buscan serenidad lejos del ruido, ya sea acampando, haciendo senderismo o disfrutando de la nieve y la naturaleza espectacular.",
 
     "services.kicker": "Servicios",
-    "services.title": "Descubre nuestro refugio",
+    "services.title": "Descubre nuestra casa de huéspedes",
     "services.rooms.title": "Calor del lugar",
     "services.rooms.desc": "Un alojamiento cómodo con carácter montañés — descanso y serenidad.",
     "services.table.title": "Generosidad de la mesa",
@@ -264,13 +264,13 @@ export const translations: Record<Lang, Dict> = {
     "services.note": "Cada imagen es una invitación a vivir la experiencia.",
 
     "gallery.kicker": "Galería",
-    "gallery.title": "Una ventana a Bouyablane",
+    "gallery.title": "Una ventana a Bouiblane",
     "gallery.desc": "De la nieve que corona nuestras cumbres en invierno al verde de los cedros en verano — vea el alma del lugar antes de llegar.",
 
     "why.kicker": "Por qué elegirnos",
     "why.title": "Cinco razones para vivir la experiencia",
     "why.1.title": "Ubicación estratégica",
-    "why.1.desc": "En el corazón de Bouyablane: vistas panorámicas y acceso a los mejores senderos.",
+    "why.1.desc": "En el corazón de Bouiblane: vistas panorámicas y acceso a los mejores senderos.",
     "why.2.title": "Hospitalidad familiar",
     "why.2.desc": "El huésped es familia. Servicio personal para su comodidad.",
     "why.3.title": "Platos tradicionales",
@@ -281,8 +281,8 @@ export const translations: Record<Lang, Dict> = {
     "why.5.desc": "Ideal para quienes buscan paz lejos del ruido y la contaminación.",
 
     "contact.kicker": "Contacto y mapa",
-    "contact.title": "Bouyablane · Taza",
-    "contact.weather": "Clima en Bouyablane",
+    "contact.title": "Bouiblane · Taza",
+    "contact.weather": "Clima en Bouiblane",
     "contact.map": "Ubicación en Google Maps",
     "contact.openMap": "Abrir mapa",
     "contact.localTime": "Hora local · Taza",
@@ -299,7 +299,7 @@ export const translations: Record<Lang, Dict> = {
     "book.cta": "Reservar por WhatsApp",
     "book.phone": "0673552963",
 
-    "footer.tag": "Refugio Zahi · Bouyablane · Marruecos",
+    "footer.tag": "Dar Diafa Zahi · Bouiblane · Marruecos",
     "footer.follow": "Síguenos",
     "footer.rights": "Todos los derechos reservados",
   },
@@ -322,12 +322,12 @@ export const translations: Record<Lang, Dict> = {
 
     "about.kicker": "Über uns",
     "about.title": "Ihr friedlicher Zufluchtsort im Herzen des Atlas",
-    "about.p1": "Willkommen in der Zahi Berghütte — Ihr idealer Ort, um zu entspannen und den Mittleren Atlas zu entdecken. Wir sind Familie Zahi und öffnen die Türen unserer bescheidenen Hütte im Herzen des majestätischen Bouyablane.",
+    "about.p1": "Willkommen im Dar Diafa Zahi — Ihr idealer Ort, um zu entspannen und den Mittleren Atlas zu entdecken. Wir sind Familie Zahi und öffnen die Türen unseres Hauses im Herzen des majestätischen Bouiblane.",
     "about.p2": "Unser Projekt entstand aus dem Wunsch, echte marokkanische Gastfreundschaft zu bieten — die Einfachheit des Berglebens mit dem Komfort eines herzlichen Empfangs verbunden.",
     "about.p3": "Unser Ziel: ein ruhiger Zufluchtsort für alle, die fernab vom Stadtlärm Ruhe suchen — beim Zelten, Wandern oder einfach beim Genießen von Schnee und Natur.",
 
     "services.kicker": "Unsere Dienste",
-    "services.title": "Entdecken Sie unsere Hütte",
+    "services.title": "Entdecken Sie unsere Gästehaus",
     "services.rooms.title": "Wärme des Ortes",
     "services.rooms.desc": "Komfortable Unterkunft mit Bergcharakter — Ruhe und Gelassenheit.",
     "services.table.title": "Großzügige Tafel",
@@ -337,13 +337,13 @@ export const translations: Record<Lang, Dict> = {
     "services.note": "Jedes Bild ist eine Einladung zu einem unvergesslichen Erlebnis.",
 
     "gallery.kicker": "Galerie",
-    "gallery.title": "Ein Fenster zum Bouyablane",
+    "gallery.title": "Ein Fenster zum Bouiblane",
     "gallery.desc": "Vom Weiß des Winterschnees auf den Gipfeln bis zum Grün der Zedernwälder im Sommer — sehen Sie die Seele des Ortes.",
 
     "why.kicker": "Warum uns wählen",
     "why.title": "Fünf Gründe für das Erlebnis",
     "why.1.title": "Strategische Lage",
-    "why.1.desc": "Mitten im Bouyablane: Panoramablicke und beste Wanderwege.",
+    "why.1.desc": "Mitten im Bouiblane: Panoramablicke und beste Wanderwege.",
     "why.2.title": "Familiäre Gastfreundschaft",
     "why.2.desc": "Gäste sind Familie. Persönlicher Service für Ihren Komfort.",
     "why.3.title": "Traditionelle Küche",
@@ -354,8 +354,8 @@ export const translations: Record<Lang, Dict> = {
     "why.5.desc": "Ideal für alle, die fernab von Lärm und Verschmutzung Ruhe suchen.",
 
     "contact.kicker": "Kontakt & Karte",
-    "contact.title": "Bouyablane · Taza",
-    "contact.weather": "Wetter in Bouyablane",
+    "contact.title": "Bouiblane · Taza",
+    "contact.weather": "Wetter in Bouiblane",
     "contact.map": "Standort auf Google Maps",
     "contact.openMap": "Karte öffnen",
     "contact.localTime": "Ortszeit · Taza",
@@ -372,7 +372,7 @@ export const translations: Record<Lang, Dict> = {
     "book.cta": "Über WhatsApp buchen",
     "book.phone": "0673552963",
 
-    "footer.tag": "Zahi Berghütte · Bouyablane · Marokko",
+    "footer.tag": "Dar Diafa Zahi · Bouiblane · Marokko",
     "footer.follow": "Folge uns",
     "footer.rights": "Alle Rechte vorbehalten",
   },
