@@ -20,16 +20,13 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # قمنا بإزالة cache: 'npm' لمنع النظام من جلب الملفات القديمة التالفة
 
       - name: Fresh Install
-        # استخدام npm ci بدلاً من install لأنه مخصص لبيئات العمل الآلية ويضمن تطابق النسخ
         run: |
           npm install -g npm@latest
           npm ci || npm install --force
 
       - name: Build
-        # التأكد من تمرير CI=false لتجاوز تحذيرات الـ CSS في index.css
         run: CI=false npm run build
 
       - name: Upload artifact
