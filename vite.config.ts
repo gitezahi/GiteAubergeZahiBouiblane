@@ -4,20 +4,23 @@ import { VitePWA } from 'vite-plugin-pwa';
 import path from 'path';
 
 export default defineConfig({
+  // السطر التالي هو الأهم لحل مشكلة الصفحة البيضاء
+  base: '/GiteAubergeZahiBouiblane/', 
   plugins: [
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      // لضمان عمل الموقع بدون إنترنت وتخزين الملفات الأساسية
       includeAssets: ['favicon.png', 'robots.txt', 'icon-zahi.png', 'sitemap.xml'],
       manifest: {
-        name: 'مأوى زاهي بويبلان - Gîte Zahi',
-        short_name: 'مأوى زاهي',
-        description: 'موقع مأوى زاهي بويبلان السياحي',
+        // تحديث الاسم للهوية الجديدة
+        name: 'دار الضيافة زاهي بويبلان - Dar Diafa Zahi',
+        short_name: 'دار الضيافة زاهي',
+        description: 'موقع دار الضيافة زاهي بويبلان السياحي',
         theme_color: '#7c8a71',
         background_color: '#ffffff',
         display: 'standalone',
-        start_url: '/',
+        // تحديث الرابط ليبدأ من مسار المشروع
+        start_url: '/GiteAubergeZahiBouiblane/',
         icons: [
           {
             src: 'icon-zahi.png',
@@ -32,7 +35,6 @@ export default defineConfig({
         ]
       },
       workbox: {
-        // تخزين الصور والفيديوهات والملفات لزيادة سرعة الموقع
         globPatterns: ['**/*.{js,css,html,png,jpg,svg,ico}'],
       }
     })
