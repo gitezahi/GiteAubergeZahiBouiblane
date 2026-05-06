@@ -4,13 +4,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Play, Image as ImageIcon } from "lucide-react";
 
-// استيراد التنسيقات الأساسية لـ Swiper (ضرورية جداً لعمل السلايدر)
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 const galleryItems = [
-  // الفيديوهات (تم دمج القائمة الكاملة)
+  // --- الفيديوهات (26) ---
   { type: "video", url: "https://www.youtube.com/watch?v=O9JwT1D3nEw", thumb: "https://img.youtube.com/vi/O9JwT1D3nEw/0.jpg" },
   { type: "video", url: "https://www.youtube.com/watch?v=z30f0SxjbAY", thumb: "https://img.youtube.com/vi/z30f0SxjbAY/0.jpg" },
   { type: "video", url: "https://www.youtube.com/watch?v=nfDGEt5oYL4", thumb: "https://img.youtube.com/vi/nfDGEt5oYL4/0.jpg" },
@@ -38,7 +37,7 @@ const galleryItems = [
   { type: "video", url: "https://www.youtube.com/watch?v=9hvY_tg9zj4", thumb: "https://img.youtube.com/vi/9hvY_tg9zj4/0.jpg" },
   { type: "video", url: "https://www.youtube.com/watch?v=wQHOMqyhnHc", thumb: "https://img.youtube.com/vi/wQHOMqyhnHc/0.jpg" },
 
-  // الصور الكاملة
+  // --- الصور (60 صورة) ---
   { type: "image", url: "https://i.ibb.co/jPsPHmgd/1.jpg", thumb: "https://i.ibb.co/jPsPHmgd/1.jpg" },
   { type: "image", url: "https://i.ibb.co/WW3Q0kFs/2.jpg", thumb: "https://i.ibb.co/WW3Q0kFs/2.jpg" },
   { type: "image", url: "https://i.ibb.co/wZ3LsC2G/3.jpg", thumb: "https://i.ibb.co/wZ3LsC2G/3.jpg" },
@@ -121,11 +120,10 @@ export const Gallery = () => {
   return (
     <section id="gallery" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
-        {/* إعادة النص الوصفي */}
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-primary font-amiri mb-4">المعرض</h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
-            اكتشف سحر الطبيعة في بويبلان من خلال مجموعتنا المختارة من الصور والفيديوهات التي توثق أجمل اللحظات في "مأوى زاهي".
+            استمتع بمشاهدة {galleryItems.length} لقطة مميزة توثق جمال "دار الضيافة زاهي بويبلان" ومحيطها الطبيعي الخلاب.
           </p>
         </div>
         
@@ -135,7 +133,7 @@ export const Gallery = () => {
           slidesPerView={1}
           navigation={true}
           pagination={{ clickable: true }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          autoplay={{ delay: 3500, disableOnInteraction: false }}
           breakpoints={{
             640: { slidesPerView: 2 },
             1024: { slidesPerView: 3 },
@@ -151,17 +149,17 @@ export const Gallery = () => {
               >
                 <img
                   src={item.thumb}
-                  alt={`Zahi Bouiblane Gallery - Item ${index + 1}`}
+                  alt={`Zahi Bouiblane Gallery - ${index + 1}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   {item.type === "video" ? (
-                    <div className="bg-secondary p-3 rounded-full">
+                    <div className="bg-secondary p-3 rounded-full shadow-lg">
                       <Play className="text-white w-8 h-8 fill-white" />
                     </div>
                   ) : (
-                    <div className="bg-white/20 p-3 rounded-full backdrop-blur-sm">
+                    <div className="bg-white/20 p-3 rounded-full backdrop-blur-sm shadow-lg">
                       <ImageIcon className="text-white w-8 h-8" />
                     </div>
                   )}
