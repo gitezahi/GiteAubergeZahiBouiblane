@@ -101,7 +101,7 @@ const galleryItems = [
   { type: "image", url: "https://i.ibb.co/JRYW1Prx/9.jpg", thumb: "https://i.ibb.co/JRYW1Prx/9.jpg" }
 ];
 
-const Gallery = () => {
+export const Gallery = () => {
   const [lightboxController, setLightboxController] = useState({
     toggler: false,
     slide: 1,
