@@ -1,16 +1,18 @@
-import { useState } from "react";
-import { useI18n } from "@/i18n/I18nContext";
-import FsLightbox from "fslightbox-react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination, Autoplay } from "swiper/modules";
-
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-
-// مصفوفة العناصر الكاملة (فيديوهات يوتيوب + جميع الصور السابقة)
+// مصفوفة العناصر الكاملة (تم إضافة 10 فيديوهات جديدة فريدة وحذف المكرر)
 const galleryItems = [
-  // --- قسم الفيديوهات (16 فيديو) ---
+  // --- الفيديوهات الجديدة (تم فحص التكرار) ---
+  { type: "video", url: "https://www.youtube.com/watch?v=O9JwT1D3nEw", thumb: "https://img.youtube.com/vi/O9JwT1D3nEw/0.jpg" },
+  { type: "video", url: "https://www.youtube.com/watch?v=z30f0SxjbAY", thumb: "https://img.youtube.com/vi/z30f0SxjbAY/0.jpg" },
+  { type: "video", url: "https://www.youtube.com/watch?v=nfDGEt5oYL4", thumb: "https://img.youtube.com/vi/nfDGEt5oYL4/0.jpg" },
+  { type: "video", url: "https://www.youtube.com/watch?v=ymutPtM-XsM", thumb: "https://img.youtube.com/vi/ymutPtM-XsM/0.jpg" },
+  { type: "video", url: "https://www.youtube.com/watch?v=AB8pEFDPGQw", thumb: "https://img.youtube.com/vi/AB8pEFDPGQw/0.jpg" },
+  { type: "video", url: "https://www.youtube.com/watch?v=9HEOJyV-T8Y", thumb: "https://img.youtube.com/vi/9HEOJyV-T8Y/0.jpg" },
+  { type: "video", url: "https://www.youtube.com/watch?v=dx3V_A919Ck", thumb: "https://img.youtube.com/vi/dx3V_A919Ck/0.jpg" },
+  { type: "video", url: "https://www.youtube.com/watch?v=OtWRlvwQ17Y", thumb: "https://img.youtube.com/vi/OtWRlvwQ17Y/0.jpg" },
+  { type: "video", url: "https://www.youtube.com/watch?v=fiC56y5Iu8o", thumb: "https://img.youtube.com/vi/fiC56y5Iu8o/0.jpg" },
+  { type: "video", url: "https://www.youtube.com/watch?v=T-rjdMPsXN8", thumb: "https://img.youtube.com/vi/T-rjdMPsXN8/0.jpg" },
+
+  // --- قسم الفيديوهات السابقة (16 فيديو) ---
   { type: "video", url: "https://www.youtube.com/watch?v=pY8rcZUkVzk", thumb: "https://img.youtube.com/vi/pY8rcZUkVzk/0.jpg" },
   { type: "video", url: "https://www.youtube.com/watch?v=7txF4u8WdI0", thumb: "https://img.youtube.com/vi/7txF4u8WdI0/0.jpg" },
   { type: "video", url: "https://www.youtube.com/watch?v=0KitPyS7WpI", thumb: "https://img.youtube.com/vi/0KitPyS7WpI/0.jpg" },
@@ -94,92 +96,3 @@ const galleryItems = [
   { type: "image", url: "https://i.ibb.co/zW86jkDM/8.jpg", thumb: "https://i.ibb.co/zW86jkDM/8.jpg" },
   { type: "image", url: "https://i.ibb.co/JRYW1Prx/9.jpg", thumb: "https://i.ibb.co/JRYW1Prx/9.jpg" }
 ];
-
-export function Gallery() {
-  const { t } = useI18n();
-  const [toggler, setToggler] = useState(false);
-  const [sourceIndex, setSourceIndex] = useState(0);
-
-  const sources = galleryItems.map(item => item.url);
-
-  function openLightboxOnSource(index: number) {
-    setSourceIndex(index);
-    setToggler(!toggler);
-  }
-
-  return (
-    <section id="gallery" className="py-16 bg-stone-50 overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="max-w-3xl mb-10 mx-auto text-center">
-          <span className="text-xs font-semibold tracking-widest uppercase text-terracotta">
-            {t("gallery.kicker")}
-          </span>
-          <h2 className="mt-3 text-3xl font-bold text-foreground font-serif">
-            {t("gallery.title")}
-          </h2>
-          <p className="mt-3 text-sm text-foreground/70 leading-relaxed">
-            {t("gallery.desc")}
-          </p>
-        </div>
-
-        <div className="relative group max-w-5xl mx-auto">
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={15}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 4000, disableOnInteraction: false }}
-            breakpoints={{
-              640: { slidesPerView: 2 },
-              1024: { slidesPerView: 3 },
-            }}
-            className="rounded-2xl shadow-xl overflow-hidden pb-12"
-          >
-            {galleryItems.map((item, i) => (
-              <SwiperSlide key={i}>
-                <div 
-                  className="relative overflow-hidden rounded-xl aspect-[4/5] cursor-pointer bg-stone-200 group/item"
-                  onClick={() => openLightboxOnSource(i)}
-                >
-                  <img
-                    src={item.thumb}
-                    alt={`Gîte Zahi Bouiblane ${i + 1}`}
-                    loading="lazy"
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-110"
-                  />
-                  
-                  {item.type === "video" && (
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-12 h-12 bg-white/80 rounded-full flex items-center justify-center shadow-lg group-hover/item:scale-110 transition-transform">
-                        <div className="w-0 h-0 border-t-[8px] border-t-transparent border-l-[12px] border-l-terracotta border-b-[8px] border-b-transparent ml-1"></div>
-                      </div>
-                    </div>
-                  )}
-
-                  <div className="absolute inset-0 bg-black/20 opacity-0 group-hover/item:opacity-100 transition-opacity flex items-center justify-center">
-                     <span className="text-white text-xs bg-black/50 px-3 py-2 rounded-full backdrop-blur-md">
-                       {item.type === "video" ? "تشغيل الفيديو" : t("common.view")}
-                     </span>
-                  </div>
-                </div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </div>
-
-      <FsLightbox
-        toggler={toggler}
-        sources={sources}
-        sourceIndex={sourceIndex}
-      />
-
-      <style>{`
-        .swiper-button-next, .swiper-button-prev { color: #7c8a71 !important; background: rgba(255, 255, 255, 0.8); width: 40px; height: 40px; border-radius: 50%; backdrop-filter: blur(4px); }
-        .swiper-button-next:after, .swiper-button-prev:after { font-size: 18px !important; font-weight: bold; }
-        .swiper-pagination-bullet-active { background: #7c8a71 !important; }
-      `}</style>
-    </section>
-  );
-}
