@@ -1,6 +1,10 @@
-// مصفوفة العناصر الكاملة (تم إضافة 10 فيديوهات جديدة فريدة وحذف المكرر)
+import React, { useState } from "react";
+import FsLightbox from "fslightbox-react";
+import { Play, Image as ImageIcon } from "lucide-react";
+
+// مصفوفة العناصر الكاملة (تم إضافة 10 فيديوهات جديدة وحذف المكرر)
 const galleryItems = [
-  // --- الفيديوهات الجديدة (تم فحص التكرار) ---
+  // --- الفيديوهات الجديدة ---
   { type: "video", url: "https://www.youtube.com/watch?v=O9JwT1D3nEw", thumb: "https://img.youtube.com/vi/O9JwT1D3nEw/0.jpg" },
   { type: "video", url: "https://www.youtube.com/watch?v=z30f0SxjbAY", thumb: "https://img.youtube.com/vi/z30f0SxjbAY/0.jpg" },
   { type: "video", url: "https://www.youtube.com/watch?v=nfDGEt5oYL4", thumb: "https://img.youtube.com/vi/nfDGEt5oYL4/0.jpg" },
@@ -96,3 +100,56 @@ const galleryItems = [
   { type: "image", url: "https://i.ibb.co/zW86jkDM/8.jpg", thumb: "https://i.ibb.co/zW86jkDM/8.jpg" },
   { type: "image", url: "https://i.ibb.co/JRYW1Prx/9.jpg", thumb: "https://i.ibb.co/JRYW1Prx/9.jpg" }
 ];
+
+const Gallery = () => {
+  const [lightboxController, setLightboxController] = useState({
+    toggler: false,
+    slide: 1,
+  });
+
+  const openLightboxOnSlide = (number: number) => {
+    setLightboxController({
+      toggler: !lightboxController.toggler,
+      slide: number,
+    });
+  };
+
+  return (
+    <section id="gallery" className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <h2 className="text-4xl font-bold text-center mb-12 text-primary">المعرض</h2>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {galleryItems.map((item, index) => (
+            <div
+              key={index}
+              className="relative group cursor-pointer overflow-hidden rounded-xl aspect-square"
+              onClick={() => openLightboxOnSlide(index + 1)}
+            >
+              <img
+                src={item.thumb}
+                alt={`Zahi Gallery ${index + 1}`}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                {item.type === "video" ? (
+                  <Play className="text-white w-12 h-12" />
+                ) : (
+                  <ImageIcon className="text-white w-12 h-12" />
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      <FsLightbox
+        toggler={lightboxController.toggler}
+        sources={galleryItems.map((item) => item.url)}
+        slide={lightboxController.slide}
+      />
+    </section>
+  );
+};
+
+// سطر التصدير الضروري لحل المشكلة
+export default Gallery;
