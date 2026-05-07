@@ -1,10 +1,11 @@
+import React from "react";
 import { Music, Headset } from "lucide-react";
-import { useTranslation } from "react-i18next"; // استيراد نظام الترجمة
+import { useI18n } from "../../i18n/I18nContext";
 
 const TRACKS = [
   {
     id: 1,
-    titleKey: "music.track1.title", // استخدام مفاتيح للترجمة
+    titleKey: "music.track1.title",
     artistKey: "music.track1.artist",
     src: "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/188989381&color=%237c8a71&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true"
   },
@@ -29,7 +30,7 @@ const TRACKS = [
 ];
 
 export function MusicSection() {
-  const { t } = useTranslation(); // تفعيل دالة الترجمة
+  const { t, dir } = useI18n();
 
   return (
     <section id="music" className="py-24 bg-gradient-cream">
@@ -38,7 +39,6 @@ export function MusicSection() {
           <div className="size-16 bg-olive/10 rounded-full flex items-center justify-center mx-auto mb-4">
             <Music className="size-8 text-olive" />
           </div>
-          {/* تم تغيير العنوان وحذف كلمة المأوى */}
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground font-serif text-olive">
             {t('music.mainTitle')}
           </h2>
@@ -50,9 +50,9 @@ export function MusicSection() {
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {TRACKS.map((track) => (
             <div key={track.id} className="bg-white p-4 rounded-3xl shadow-sm border border-border hover:shadow-md transition-shadow">
-              <div className="flex items-center gap-3 mb-4 px-2">
+              <div className={`flex items-center gap-3 mb-4 px-2 ${dir === "rtl" ? "flex-row" : "flex-row"}`}>
                 <Headset className="size-5 text-terracotta" />
-                <div>
+                <div className={dir === "rtl" ? "text-right" : "text-left"}>
                   <h3 className="font-bold text-foreground text-sm">{t(track.titleKey)}</h3>
                   <p className="text-xs text-muted-foreground">{t(track.artistKey)}</p>
                 </div>
