@@ -1,6 +1,9 @@
 import { BookOpen, Star } from "lucide-react";
+import { useTranslation } from "react-i18next"; // استيراد نظام الترجمة
 
 export function QuranSection() {
+  const { t } = useTranslation(); // تفعيل دالة الترجمة
+
   return (
     <section id="quran" className="py-24 bg-white">
       <div className="container mx-auto px-4">
@@ -8,9 +11,11 @@ export function QuranSection() {
           <div className="size-16 bg-olive/10 rounded-full flex items-center justify-center mx-auto mb-4">
             <BookOpen className="size-8 text-olive" />
           </div>
-          <h2 className="text-3xl lg:text-4xl font-bold text-foreground font-serif text-olive">الرواق القرآني</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold text-foreground font-serif text-olive">
+            {t('quran.title')}
+          </h2>
           <p className="mt-4 text-muted-foreground">
-            تلاوات خاشعة بالقرآن الكريم - برواية ورش عن نافع
+            {t('quran.subtitle')}
           </p>
         </div>
 
@@ -21,8 +26,12 @@ export function QuranSection() {
                 <Star className="size-6 text-olive" />
               </div>
               <div>
-                <h3 className="text-xl font-bold text-foreground">المصحف المرتل كاملاً</h3>
-                <p className="text-sm text-muted-foreground">بصوت القارئ محمد إرشاد مربعي</p>
+                <h3 className="text-xl font-bold text-foreground">
+                  {t('quran.playlistTitle')}
+                </h3>
+                <p className="text-sm text-muted-foreground">
+                  {t('quran.reciterName')}
+                </p>
               </div>
             </div>
 
@@ -38,7 +47,7 @@ export function QuranSection() {
             </div>
             
             <p className="text-center mt-6 text-xs text-muted-foreground italic">
-              "ألا بذكر الله تطمئن القلوب"
+              {t('quran.verse')}
             </p>
           </div>
         </div>

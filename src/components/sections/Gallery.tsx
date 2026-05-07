@@ -3,6 +3,7 @@ import FsLightbox from "fslightbox-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Play, Image as ImageIcon } from "lucide-react";
+import { useTranslation } from "react-i18next"; // استيراد نظام الترجمة
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -105,6 +106,7 @@ const galleryItems = [
 ];
 
 export const Gallery = () => {
+  const { t } = useTranslation(); // تفعيل دالة الترجمة
   const [lightboxController, setLightboxController] = useState({
     toggler: false,
     slide: 1,
@@ -121,9 +123,13 @@ export const Gallery = () => {
     <section id="gallery" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-primary font-amiri mb-4">المعرض</h2>
+          {/* تم ربط العنوان بالترجمة */}
+          <h2 className="text-4xl font-bold text-primary font-amiri mb-4">
+            {t('gallery.title')}
+          </h2>
+          {/* تم ربط الوصف بالترجمة واستبدال "مأوى زاهي" باسم "دار الضيافة زاهي" في ملفات الترجمة */}
           <p className="text-gray-600 max-w-2xl mx-auto">
-            استمتع بمشاهدة {galleryItems.length} لقطة مميزة توثق جمال "دار الضيافة زاهي بويبلان" ومحيطها الطبيعي الخلاب.
+            {t('gallery.description', { count: galleryItems.length })}
           </p>
         </div>
         
