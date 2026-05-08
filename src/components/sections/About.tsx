@@ -1,8 +1,9 @@
 import React from 'react';
-// استخدام صورة موجودة فعلياً في مجلدك لإصلاح خطأ البناء
+
+// استخدام صورة موجودة فعلياً في المجلد بناءً على صورة الملفات المرفقة
 import aboutImage from '../../assets/group.jpg'; 
 
-const About = () => {
+export const About = () => {
   return (
     <section id="about" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -13,7 +14,7 @@ const About = () => {
             <div className="relative">
               <img 
                 src={aboutImage} 
-                alt="عائلة زاهي بويبلان" 
+                alt="Family Zahi Bouiblane" 
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />
               <div className="absolute -bottom-6 -right-6 bg-green-600 text-white p-6 rounded-xl hidden md:block">
@@ -26,7 +27,6 @@ const About = () => {
           {/* الجانب الأيسر: النصوص باللغات الخمس */}
           <div className="lg:w-1/2 w-full space-y-8 text-right" dir="rtl">
             
-            {/* النسخة العربية - تم تصحيح "في دارنا" */}
             <div className="border-r-4 border-green-600 pr-6">
               <h2 className="text-3xl font-bold mb-4 text-gray-800">من نحن</h2>
               <p className="text-gray-700 leading-relaxed">
@@ -37,23 +37,23 @@ const About = () => {
               </p>
             </div>
 
-            {/* اللغات الأخرى (تظهر بشكل مبسط أو حسب لغة الموقع المبرمجة) */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left" dir="ltr">
-              <div className="p-3 bg-white rounded shadow-sm">
-                <h4 className="font-bold text-blue-600">Français</h4>
-                <p className="text-xs text-gray-600">Bienvenue au Gîte Zahi, une expérience familiale authentique au mont Bouiblane.</p>
+            {/* تراجم مختصرة للغات الخمس لضمان الاحترافية */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left font-sans" dir="ltr">
+              <div className="p-3 bg-white rounded shadow-sm border-l-2 border-blue-500">
+                <h4 className="font-bold text-xs">Français</h4>
+                <p className="text-[10px] text-gray-600">Bienvenue au Gîte Zahi, votre refuge authentique au mont Bouiblane.</p>
               </div>
-              <div className="p-3 bg-white rounded shadow-sm">
-                <h4 className="font-bold text-orange-600">English</h4>
-                <p className="text-xs text-gray-600">Welcome to Zahi Guest House, your nature escape in the Middle Atlas mountains.</p>
+              <div className="p-3 bg-white rounded shadow-sm border-l-2 border-orange-500">
+                <h4 className="font-bold text-xs">English</h4>
+                <p className="text-[10px] text-gray-600">Welcome to Zahi Guest House, a true Moroccan experience in the Atlas.</p>
               </div>
-              <div className="p-3 bg-white rounded shadow-sm">
-                <h4 className="font-bold text-red-600">Español</h4>
-                <p className="text-xs text-gray-600">Bienvenidos a la Casa Zahi, hospitalidad marroquí en el corazón del Atlas.</p>
+              <div className="p-3 bg-white rounded shadow-sm border-l-2 border-red-500">
+                <h4 className="font-bold text-xs">Español</h4>
+                <p className="text-[10px] text-gray-600">Bienvenidos a la Casa Zahi, hospitalidad real en el corazón de la montaña.</p>
               </div>
-              <div className="p-3 bg-white rounded shadow-sm">
-                <h4 className="font-bold text-yellow-600">Deutsch</h4>
-                <p className="text-xs text-gray-600">Willkommen im Gästehaus Zahi, Ihr Rückzugsort in den Bergen von Bouiblane.</p>
+              <div className="p-3 bg-white rounded shadow-sm border-l-2 border-yellow-500">
+                <h4 className="font-bold text-xs">Deutsch</h4>
+                <p className="text-[10px] text-gray-600">Willkommen im Gästehaus Zahi, Ihr Naturparadies im Mittleren Atlas.</p>
               </div>
             </div>
 
@@ -63,5 +63,3 @@ const About = () => {
     </section>
   );
 };
-
-export default About;
