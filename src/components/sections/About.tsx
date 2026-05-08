@@ -1,6 +1,6 @@
 import React from 'react';
-// استيراد الصورة - تأكد من وجود صورة بهذا الاسم في مجلد assets
-import aboutImage from '../assets/about.jpg'; 
+// استخدام صورة موجودة فعلياً في مجلدك لإصلاح خطأ البناء
+import aboutImage from '../../assets/group.jpg'; 
 
 const About = () => {
   return (
@@ -13,7 +13,7 @@ const About = () => {
             <div className="relative">
               <img 
                 src={aboutImage} 
-                alt="Gîte Auberge Zahi Bouiblane" 
+                alt="عائلة زاهي بويبلان" 
                 className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
               />
               <div className="absolute -bottom-6 -right-6 bg-green-600 text-white p-6 rounded-xl hidden md:block">
@@ -23,11 +23,11 @@ const About = () => {
             </div>
           </div>
 
-          {/* الجانب الأيسر: النصوص المترجمة */}
-          <div className="lg:w-1/2 w-full space-y-8">
+          {/* الجانب الأيسر: النصوص باللغات الخمس */}
+          <div className="lg:w-1/2 w-full space-y-8 text-right" dir="rtl">
             
-            {/* النسخة العربية */}
-            <div dir="rtl" className="border-r-4 border-green-600 pr-6">
+            {/* النسخة العربية - تم تصحيح "في دارنا" */}
+            <div className="border-r-4 border-green-600 pr-6">
               <h2 className="text-3xl font-bold mb-4 text-gray-800">من نحن</h2>
               <p className="text-gray-700 leading-relaxed">
                 مرحباً بكم في **دار الضيافة زاهي بويبلان**، وجهتكم المثالية للاسترخاء واكتشاف سحر الأطلس المتوسط. نحن عائلة زاهي، نفتح لكم أبواب دارنا المتواضع في قلب جبل بويبلان الشامخ، لنشارككم شغفنا بهذه المنطقة وتاريخها العريق.
@@ -35,25 +35,26 @@ const About = () => {
               <p className="text-gray-700 mt-4 leading-relaxed">
                 انطلق مشروعنا من رغبتنا في تقديم تجربة ضيافة مغربية حقيقية، حيث نمزج بين بساطة الحياة الجبلية وراحة الاستقبال الأصيل. في دارنا، لست مجرد زائر، بل أنت فرد من العائلة؛ تستمتع بوجباتنا التقليدية المحضرة بحب، وتستنشق هواء الغابات النقي، وتستكشف مسارات الجبال.
               </p>
-              <p className="text-gray-700 mt-4 leading-relaxed">
-                هدفنا هو توفير ملاذ هادئ لكل باحث عن السكينة بعيداً عن صخب المدينة، سواء كنت من عشاق التخييم، أو من محبي رياضة المشي الجبلي، أو ببساطة تريد الاستمتاع بجمال الثلوج والطبيعة الخلابة.
-              </p>
             </div>
 
-            {/* Version Française */}
-            <div className="border-l-4 border-blue-600 pl-6">
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">À Propos de Nous</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Bienvenue au **Gîte Auberge Zahi**, votre refuge au cœur du mont Bouiblane. Nous offrons une expérience authentique alliant randonnée, camping et gastronomie locale. Ici, vous n'êtes pas un simple client, mais un membre de notre famille.
-              </p>
-            </div>
-
-            {/* English Version */}
-            <div className="border-l-4 border-orange-500 pl-6">
-              <h3 className="text-xl font-semibold mb-2 text-gray-800">About Us</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Welcome to **Zahi Guest House**, your perfect getaway in Mount Bouiblane. Whether you are a hiking enthusiast, a camping lover, or simply seeking peace in nature and snow, we provide a warm family atmosphere and authentic Moroccan hospitality.
-              </p>
+            {/* اللغات الأخرى (تظهر بشكل مبسط أو حسب لغة الموقع المبرمجة) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left" dir="ltr">
+              <div className="p-3 bg-white rounded shadow-sm">
+                <h4 className="font-bold text-blue-600">Français</h4>
+                <p className="text-xs text-gray-600">Bienvenue au Gîte Zahi, une expérience familiale authentique au mont Bouiblane.</p>
+              </div>
+              <div className="p-3 bg-white rounded shadow-sm">
+                <h4 className="font-bold text-orange-600">English</h4>
+                <p className="text-xs text-gray-600">Welcome to Zahi Guest House, your nature escape in the Middle Atlas mountains.</p>
+              </div>
+              <div className="p-3 bg-white rounded shadow-sm">
+                <h4 className="font-bold text-red-600">Español</h4>
+                <p className="text-xs text-gray-600">Bienvenidos a la Casa Zahi, hospitalidad marroquí en el corazón del Atlas.</p>
+              </div>
+              <div className="p-3 bg-white rounded shadow-sm">
+                <h4 className="font-bold text-yellow-600">Deutsch</h4>
+                <p className="text-xs text-gray-600">Willkommen im Gästehaus Zahi, Ihr Rückzugsort in den Bergen von Bouiblane.</p>
+              </div>
             </div>
 
           </div>
