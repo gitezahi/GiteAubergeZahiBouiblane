@@ -1,63 +1,59 @@
 import React from 'react';
-
-// استخدام صورة موجودة فعلياً في المجلد بناءً على صورة الملفات المرفقة
+import { useI18n } from '@/i18n/I18nContext'; // استدعاء نظام الترجمة الخاص بك
 import aboutImage from '../../assets/group.jpg'; 
+import { Mountain } from 'lucide-react'; // استيراد أيقونة الجبل
 
 export const About = () => {
+  const { t, language } = useI18n(); // الحصول على اللغة الحالية ودالة الترجمة
+
+  // تحديد اتجاه النص بناءً على اللغة
+  const isRTL = language === 'ar';
+
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row items-center gap-12">
+        <div className={`flex flex-col lg:flex-row items-center gap-12 ${isRTL ? 'lg:flex-row-reverse' : ''}`}>
           
-          {/* الجانب الأيمن: الصورة */}
+          {/* الجانب الخاص بالصورة مع أيقونة الارتفاع */}
           <div className="lg:w-1/2 w-full">
             <div className="relative">
               <img 
                 src={aboutImage} 
-                alt="Family Zahi Bouiblane" 
-                className="rounded-2xl shadow-2xl w-full h-[500px] object-cover"
+                alt="Gîte Auberge Zahi" 
+                className="rounded-lg shadow-2xl w-full h-[450px] object-cover"
               />
-              <div className="absolute -bottom-6 -right-6 bg-green-600 text-white p-6 rounded-xl hidden md:block">
-                <p className="text-2xl font-bold">100%</p>
-                <p className="text-sm">Nature & Authenticité</p>
+              {/* الأيقونة التي كانت تحت الصورة - ارتفاع الجبل */}
+              <div className={`absolute -bottom-6 ${isRTL ? '-left-6' : '-right-6'} bg-[#8B4513] text-white p-4 rounded-lg flex items-center gap-3 shadow-lg`}>
+                <Mountain size={32} />
+                <div>
+                  <p className="text-xs opacity-80">Alt.</p>
+                  <p className="font-bold">3192m</p>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* الجانب الأيسر: النصوص باللغات الخمس */}
-          <div className="lg:w-1/2 w-full space-y-8 text-right" dir="rtl">
+          {/* الجانب الخاص بالنصوص */}
+          <div className={`lg:w-1/2 w-full ${isRTL ? 'text-right' : 'text-left'}`} dir={isRTL ? 'rtl' : 'ltr'}>
+            {/* عنوان "من نحن" باللون البني كما طلبت */}
+            <h2 className="text-3xl font-bold mb-6 text-[#8B4513]">
+              {t('about.title')}
+            </h2>
             
-            <div className="border-r-4 border-green-600 pr-6">
-              <h2 className="text-3xl font-bold mb-4 text-gray-800">من نحن</h2>
-              <p className="text-gray-700 leading-relaxed">
-                مرحباً بكم في **دار الضيافة زاهي بويبلان**، وجهتكم المثالية للاسترخاء واكتشاف سحر الأطلس المتوسط. نحن عائلة زاهي، نفتح لكم أبواب دارنا المتواضع في قلب جبل بويبلان الشامخ، لنشارككم شغفنا بهذه المنطقة وتاريخها العريق.
+            <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+              {/* النص الوصفي الكامل - سيتحول آلياً عند تغيير اللغة */}
+              <p>
+                {t('about.description1')}
               </p>
-              <p className="text-gray-700 mt-4 leading-relaxed">
-                انطلق مشروعنا من رغبتنا في تقديم تجربة ضيافة مغربية حقيقية، حيث نمزج بين بساطة الحياة الجبلية وراحة الاستقبال الأصيل. في دارنا، لست مجرد زائر، بل أنت فرد من العائلة؛ تستمتع بوجباتنا التقليدية المحضرة بحب، وتستنشق هواء الغابات النقي، وتستكشف مسارات الجبال.
+              <p>
+                {t('about.description2')}
+              </p>
+              <p>
+                {t('about.description3')}
               </p>
             </div>
-
-            {/* تراجم مختصرة للغات الخمس لضمان الاحترافية */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left font-sans" dir="ltr">
-              <div className="p-3 bg-white rounded shadow-sm border-l-2 border-blue-500">
-                <h4 className="font-bold text-xs">Français</h4>
-                <p className="text-[10px] text-gray-600">Bienvenue au Gîte Zahi, votre refuge authentique au mont Bouiblane.</p>
-              </div>
-              <div className="p-3 bg-white rounded shadow-sm border-l-2 border-orange-500">
-                <h4 className="font-bold text-xs">English</h4>
-                <p className="text-[10px] text-gray-600">Welcome to Zahi Guest House, a true Moroccan experience in the Atlas.</p>
-              </div>
-              <div className="p-3 bg-white rounded shadow-sm border-l-2 border-red-500">
-                <h4 className="font-bold text-xs">Español</h4>
-                <p className="text-[10px] text-gray-600">Bienvenidos a la Casa Zahi, hospitalidad real en el corazón de la montaña.</p>
-              </div>
-              <div className="p-3 bg-white rounded shadow-sm border-l-2 border-yellow-500">
-                <h4 className="font-bold text-xs">Deutsch</h4>
-                <p className="text-[10px] text-gray-600">Willkommen im Gästehaus Zahi, Ihr Naturparadies im Mittleren Atlas.</p>
-              </div>
-            </div>
-
           </div>
+
         </div>
       </div>
     </section>
