@@ -245,7 +245,7 @@ export const translations: Record<Lang, Dict> = {
     "testimonials.3.text": "Excellent welcome and hospitality in the heart of the Bouiblane mountains.",
     "testimonials.4.text": "Very beautiful place, good service, generous people and wonderful landscapes."
   },
-  es: {
+es: {
     "nav.home": "Inicio",
     "nav.about": "Nosotros",
     "nav.services": "Servicios",
@@ -255,28 +255,40 @@ export const translations: Record<Lang, Dict> = {
     "nav.music": "Espacio Audio",
     "nav.quran": "Espacio Coránico",
     "nav.book": "Reservar",
-    // لماذا تختارنا (التي ظهرت في الصورة الأولى)
+    // قسم الهيرو (البداية) - مفقود في كودك الحالي
+    "hero.tag": "Dar al-Diyafa Zahi Bouyablane",
+    "hero.title": "Disfruta de la paz en el corazón del Atlas",
+    "hero.subtitle": "Su refugio ideal para relajarse y descubrir el encanto de Bouyablane.",
+    "hero.cta": "Reservar Ahora",
+    "hero.discover": "Descubra nuestra hospitalidad",
+    // قسم من نحن - مفقود في كودك الحالي
+    "about.kicker": "Nosotros",
+    "about.title": "Su refugio tranquilo en el corazón del Atlas",
+    "about.p1": "Bienvenidos a Dar Diafa Zahi, su destino ideal para descubrir el Medio Atlas.",
+    "about.p2": "Nuestro proyecto nació del deseo de ofrecer una auténtica experiencia de hospitalidad marroquí.",
+    "about.p3": "Nuestro objetivo es proporcionar un refugio tranquilo para quienes buscan serenidad.",
+    // قسم الخدمات - مفقود في كودك الحالي
+    "services.kicker": "Servicios",
+    "services.title": "Explore nuestra casa",
+    // قسم لماذا نحن (موجود في كودك)
     "why.kicker": "Por qué elegirnos",
     "why.title": "Cinco razones para vivir la experiencia con nosotros",
     "why.1.title": "Ubicación estratégica",
-    "why.1.desc": "En el corazón de Bouiblane, vistas panorámicas y fácil acceso a las mejores rutas.",
+    "why.1.desc": "En el corazón de Bouiblane, vistas panorámicas y fácil acceso.",
     "why.2.title": "Hospitalidad familiar",
-    "why.2.desc": "El huésped es un miembro de la familia. Servicio personalizado que garantiza comodidad.",
+    "why.2.desc": "El huésped es un miembro de la familia. Servicio personalizado.",
     "why.3.title": "Platos tradicionales",
-    "why.3.desc": "Sabor auténtico de la cocina de montaña marroquí, con productos locales naturales.",
+    "why.3.desc": "Sabor auténtico de la cocina de montaña marroquí.",
     "why.4.title": "Actividades variadas",
-    "why.4.desc": "Esquí en invierno, camping en verano, exploración de cuevas y manantiales.",
+    "why.4.desc": "Esquí en invierno, camping en verano, exploración de cuevas.",
     "why.5.title": "Tranquilidad total",
-    "why.5.desc": "Lugar ideal para quienes buscan paz mental lejos del ruido y la contaminación de la ciudad.",
-    // آراء الزوار
+    "why.5.desc": "Lugar ideal para quienes buscan paz mental lejos del ruido.",
     "testimonials.title": "Lo que dicen nuestros visitantes",
-    "testimonials.1.text": "Excelente experiencia con la familia Zahi. Cálida bienvenida y comida orgánica deliciosa.",
-    // الرواق الصوتي والقرآني
+    "testimonials.1.text": "Excelente experiencia con la familia Zahi.",
     "music.mainTitle": "Espacio Audio",
     "music.description": "Melodías del Atlas y la historia auténtica",
     "quran.title": "Espacio Coránico",
     "quran.subtitle": "Recitaciones tranquilas del Sagrado Corán",
-    // قسم الحجز (الذي ظهر في الصورة الثانية)
     "book.title": "¿Estás listo para conocer la montaña?",
     "book.desc": "Contáctenos directamente por WhatsApp para reservar su estancia.",
     "book.cta": "Reservar por WhatsApp",
@@ -293,31 +305,43 @@ export const translations: Record<Lang, Dict> = {
     "nav.music": "Audio-Lounge",
     "nav.quran": "Koran-Lounge",
     "nav.book": "Buchen",
-    // Warum wir
+    // Hero Section
+    "hero.tag": "Dar al-Diyafa Zahi Bouyablane",
+    "hero.title": "Genießen Sie die Ruhe im Herzen des Atlas",
+    "hero.subtitle": "Ihr idealer Rückzugsort in den Bouyablane-Bergen.",
+    "hero.cta": "Jetzt Buchen",
+    "hero.discover": "Entdecken Sie uns",
+    // About Section
+    "about.kicker": "Über uns",
+    "about.title": "Ihr friedlicher Zufluchtsort im Atlas",
+    "about.p1": "Willkommen im Dar Diafa Zahi, Ihrem idealen Ziel im Mittleren Atlas.",
+    "about.p2": "Echte marokkanische Gastfreundschaft im Herzen der Berge.",
+    "about.p3": "Ein ruhiger Rückzugsort für alle, die Erholung suchen.",
+    // Services
+    "services.kicker": "Dienstleistungen",
+    "services.title": "Erkunden Sie unser Gästehaus",
+    // Why Us
     "why.kicker": "Warum uns wählen",
     "why.title": "Fünf Gründe, das Erlebnis mit uns zu teilen",
     "why.1.title": "Strategische Lage",
-    "why.1.desc": "Im Herzen von Bouiblane, Panoramaaussichten und einfacher Zugang zu den besten Wanderwegen.",
+    "why.1.desc": "Im Herzen von Bouiblane, Panoramaaussichten und einfacher Zugang.",
     "why.2.title": "Familiäre Gastfreundschaft",
-    "why.2.desc": "Der Gast ist ein Familienmitglied. Persönlicher Service garantiert Komfort.",
+    "why.2.desc": "Der Gast ist ein Familienmitglied. Komfort garantiert.",
     "why.3.title": "Traditionelle Gerichte",
-    "why.3.desc": "Authentischer Geschmack der marokkanischen Bergküche mit lokalen Naturprodukten.",
+    "why.3.desc": "Authentischer Geschmack der marokkanischen Bergküche.",
     "why.4.title": "Vielfältige Aktivitäten",
-    "why.4.desc": "Skifahren im Winter, Camping im Sommer, Erkundung von Höhlen und Quellen.",
+    "why.4.desc": "Skifahren im Winter, Camping im Sommer.",
     "why.5.title": "Absolute Ruhe",
-    "why.5.desc": "Idealer Ort für alle, die seelische Ruhe abseits von Stadtlärm und Umweltverschmutzung suchen.",
+    "why.5.desc": "Idealer Ort für seelische Ruhe abseits von Stadtlärm.",
     "testimonials.title": "Besucherstimmen",
-    "testimonials.1.text": "Tolle Erfahrung bei Familie Zahi. Herzlicher Empfang und exzellente Bio-Gerichte.",
-    // Audio & Koran
+    "testimonials.1.text": "Tolle Erfahrung bei Familie Zahi.",
     "music.mainTitle": "Audio-Lounge",
     "music.description": "Melodien aus der Geschichte und Schönheit des Atlas",
     "quran.title": "Koran-Lounge",
     "quran.subtitle": "Beruhigende Rezitationen des Heiligen Korans",
-    // Buchung
     "book.title": "Bereit für die Berge?",
-    "book.desc": "Kontaktieren Sie uns direkt über WhatsApp, um Ihren Aufenthalt zu buchen.",
+    "book.desc": "Kontaktieren Sie uns direkt über WhatsApp, um zu buchen.",
     "book.cta": "Über WhatsApp buchen",
     "footer.brandName": "Zahi Gästehaus",
     "footer.rights": "Alle Rechte vorbehalten"
   }
-};
