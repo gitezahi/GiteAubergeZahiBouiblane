@@ -1,5 +1,5 @@
 import { useI18n } from "@/i18n/I18nContext";
-
+import aboutImage from '../assets/about.jpg';
 export function About() {
   const { t } = useI18n();
   return (

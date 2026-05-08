@@ -2,7 +2,7 @@ import { useI18n } from "@/i18n/I18nContext";
 import { Button } from "@/components/ui/button";
 import { ArrowDown, MessageCircle } from "lucide-react";
 import hero from "@/assets/hero-mountain.jpg";
-
+import heroImage from '../assets/hero.jpg';
 export function Hero() {
   const { t } = useI18n();
   
