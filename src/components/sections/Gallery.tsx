@@ -4,8 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Play, Image as ImageIcon } from "lucide-react";
 // نستخدم السياق الخاص بنا لضمان جلب الصور من ملف translations.ts
-import { useI18n } from "../i18n/I18nContext"; 
-
+import { useI18n } from "../../i18n/I18nContext";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -14,11 +13,7 @@ export const Gallery = () => {
   const { t } = useI18n();
   
   // هنا السحر: نجلب مصفوفة الروابط الضخمة التي وضعتها أنت في translations.ts
-  const galleryItems = t('gallery.items') as Array<{
-    type: string;
-    url: string;
-    thumb: string;
-  }>;
+const galleryItems = (t('gallery.items') || []) as any[];
 
   const [lightboxController, setLightboxController] = useState({
     toggler: false,
