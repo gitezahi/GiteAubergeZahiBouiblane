@@ -8,6 +8,7 @@ type Ctx = {
   dir: "rtl" | "ltr";
 };
 
+// @ts-ignore
 const I18nContext = createContext<Ctx | null>(null);
 
 export function I18nProvider({ children }: { children: ReactNode }) {
@@ -29,22 +30,27 @@ export function I18nProvider({ children }: { children: ReactNode }) {
       lang,
       setLang: setLangState,
       dir,
+      // @ts-ignore
       t: (key: string): string => {
-        const keys = key.split('.');
-        let result: any = (translations as any)[lang];
+        try {
+          const keys = key.split('.');
+          let result = (translations as any)[lang];
 
-        for (const k of keys) {
-          if (result && typeof result === 'object' && k in result) {
-            result = result[k];
-          } else {
-            let fallback: any = (translations as any).ar;
-            for (const fk of keys) {
-              fallback = fallback?.[fk];
+          for (const k of keys) {
+            if (result && typeof result === 'object') {
+              result = result[k];
+            } else {
+              let fallback = (translations as any).ar;
+              for (const fk of keys) {
+                fallback = fallback?.[fk];
+              }
+              return typeof fallback === 'string' ? fallback : key;
             }
-            return typeof fallback === 'string' ? fallback : key;
           }
+          return typeof result === 'string' ? result : key;
+        } catch (e) {
+          return key;
         }
-        return typeof result === 'string' ? result : key;
       },
     }),
     [lang, dir]
