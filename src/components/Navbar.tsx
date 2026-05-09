@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import logo from '../assets/logo.png';
+
 import { useI18n } from "@/i18n/I18nContext";
 import { LanguageSwitcher } from "./LanguageSwitcher";
 import { LocalClock } from "./LocalClock";
