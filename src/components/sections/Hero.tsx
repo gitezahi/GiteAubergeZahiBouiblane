@@ -1,8 +1,8 @@
-import { useI18n } from "@/i18n/I18nContext";
+import { useI18n } from "../../i18n/I18nContext"; // تصحيح المسار ليتوافق مع مجلد i18
 import { Button } from "@/components/ui/button";
 import { ArrowDown, MessageCircle } from "lucide-react";
 import hero from "@/assets/hero-mountain.jpg";
-import heroImage from '../assets/hero.jpg';
+
 export function Hero() {
   const { t } = useI18n();
   
@@ -10,7 +10,7 @@ export function Hero() {
     <section id="top" className="relative min-h-[100svh] flex items-end overflow-hidden">
       <img
         src={hero}
-        alt={t("hero.imageAlt")} // جعل وصف الصورة قابلاً للترجمة أيضاً
+        alt={t("hero.imageAlt")} 
         width={1920}
         height={1280}
         className="absolute inset-0 w-full h-full object-cover scale-105"
@@ -22,7 +22,6 @@ export function Hero() {
         <div className="max-w-3xl mx-auto animate-fade-up flex flex-col items-center">
           <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cream/80 backdrop-blur border border-border text-xs lg:text-sm text-earth font-medium tracking-wide">
             <span className="size-1.5 rounded-full bg-terracotta" />
-            {/* تم ربط التاج بالترجمة الآن */}
             {t("hero.tag")} 
           </span>
           
@@ -35,7 +34,7 @@ export function Hero() {
           </p>
           
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            {/* زر واتساب */}
+            {/* زر واتساب - محجوز لـ hero.cta */}
             <Button
               asChild
               size="lg"
@@ -47,7 +46,7 @@ export function Hero() {
               </a>
             </Button>
             
-            {/* زر اكتشف ضيافتنا - تم ربطه بالترجمة هنا */}
+            {/* زر اكتشف ضيافتنا - يوجه الآن إلى قسم About بنجاح */}
             <Button
               asChild
               variant="outline"

@@ -3,8 +3,8 @@ import FsLightbox from "fslightbox-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Play, Image as ImageIcon } from "lucide-react";
-// نستخدم السياق الخاص بنا لضمان جلب الصور من ملف translations.ts
-import { useI18n } from "../../i18n/I18nContext";
+import { useI18n } from "../../i18n/I18nContext"; 
+
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -12,8 +12,9 @@ import "swiper/css/pagination";
 export const Gallery = () => {
   const { t } = useI18n();
   
-  // هنا السحر: نجلب مصفوفة الروابط الضخمة التي وضعتها أنت في translations.ts
-const galleryItems = (t('gallery.items') || []) as any[];
+  // جلب البيانات مع التأكد أنها مصفوفة
+  const items = t('gallery.items');
+  const galleryItems = Array.isArray(items) ? items : [];
 
   const [lightboxController, setLightboxController] = useState({
     toggler: false,
@@ -56,18 +57,16 @@ const galleryItems = (t('gallery.items') || []) as any[];
           }}
           className="pb-12"
         >
-          {/* هنا نقوم بعرض الصور التي جلبناها من ملف الترجمة */}
-          {Array.isArray(galleryItems) && galleryItems.map((item, index) => (
+          {galleryItems.map((item: any, index: number) => (
             <SwiperSlide key={index}>
               <div
                 className="relative group cursor-pointer overflow-hidden rounded-xl aspect-video shadow-md border-4 border-white transition-all hover:border-secondary"
                 onClick={() => openLightboxOnSlide(index + 1)}
               >
                 <img
-                  src={item.thumb}
+                  src={item.thumb || item.url}
                   alt={`Gallery ${index + 1}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   {item.type === "video" ? (
@@ -86,10 +85,9 @@ const galleryItems = (t('gallery.items') || []) as any[];
         </Swiper>
       </div>
 
-      {/* هذا هو المكبر الذي يظهر الصور عند الضغط عليها */}
       <FsLightbox
         toggler={lightboxController.toggler}
-        sources={Array.isArray(galleryItems) ? galleryItems.map((item) => item.url) : []}
+        sources={galleryItems.map((item: any) => item.url)}
         slide={lightboxController.slide}
       />
     </section>
