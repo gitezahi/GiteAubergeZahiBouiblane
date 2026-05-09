@@ -3,18 +3,18 @@ import FsLightbox from "fslightbox-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { Play, Image as ImageIcon } from "lucide-react";
-import { useTranslation } from "react-i18next";
+// نستخدم السياق الخاص بنا لضمان جلب الصور من ملف translations.ts
+import { useI18n } from "../i18n/I18nContext"; 
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export const Gallery = () => {
-  const { t } = useTranslation();
+  const { t } = useI18n();
   
-  // جلب مصفوفة العناصر من ملف الترجمة (gallery.items)
-  // t('gallery.items', { returnObjects: true }) تضمن جلب المصفوفة كبيانات وليس كنص
-  const galleryItems = t('gallery.items', { returnObjects: true }) as Array<{
+  // هنا السحر: نجلب مصفوفة الروابط الضخمة التي وضعتها أنت في translations.ts
+  const galleryItems = t('gallery.items') as Array<{
     type: string;
     url: string;
     thumb: string;
@@ -36,15 +36,12 @@ export const Gallery = () => {
     <section id="gallery" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          {/* الكيكر (العنوان الصغير العلوي) */}
           <span className="text-secondary font-semibold tracking-wider uppercase text-sm mb-2 block">
             {t('gallery.kicker')}
           </span>
-          {/* العنوان الرئيسي: دار الضيافة زاهي بويبلان */}
           <h2 className="text-4xl font-bold text-primary font-amiri mb-4">
             {t('gallery.title')}
           </h2>
-          {/* الوصف المترجم الذي قمنا بتعديله */}
           <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
             {t('gallery.desc')}
           </p>
@@ -64,7 +61,7 @@ export const Gallery = () => {
           }}
           className="pb-12"
         >
-          {/* نستخدم هنا galleryItems القادمة من الترجمة */}
+          {/* هنا نقوم بعرض الصور التي جلبناها من ملف الترجمة */}
           {Array.isArray(galleryItems) && galleryItems.map((item, index) => (
             <SwiperSlide key={index}>
               <div
@@ -94,6 +91,7 @@ export const Gallery = () => {
         </Swiper>
       </div>
 
+      {/* هذا هو المكبر الذي يظهر الصور عند الضغط عليها */}
       <FsLightbox
         toggler={lightboxController.toggler}
         sources={Array.isArray(galleryItems) ? galleryItems.map((item) => item.url) : []}
