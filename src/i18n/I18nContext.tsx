@@ -1,20 +1,60 @@
-// داخل ملف I18nContext.tsx - ابحث عن useMemo واستبدل دالة t
-t: (key: string) => {
-  // تفكيك المفتاح بناءً على النقطة (مثلاً hero.title تصبح مصفوفة)
-  const keys = key.split('.'); 
-  let result: any = translations[lang];
+import React, { createContext, useContext, useEffect, useMemo, useState, ReactNode } from "react";
+import { LANGUAGES, Lang, translations } from "./translations";
 
-  for (const k of keys) {
-    if (result && result[k]) {
-      result = result[k];
-    } else {
-      // إذا لم يجد النص في اللغة الحالية، يبحث في العربية كاحتياط
-      let fallback: any = translations.ar;
-      for (const fk of keys) {
-        fallback = fallback?.[fk];
-      }
-      return typeof fallback === 'string' ? fallback : key;
-    }
-  }
-  return typeof result === 'string' ? result : key;
-},
+type Ctx = {
+  lang: Lang;
+  setLang: (l: Lang) => void;
+  t: (key: string) => string;
+  dir: "rtl" | "ltr";
+};
+
+const I18nContext = createContext<Ctx | null>(null);
+
+export function I18nProvider({ children }: { children: ReactNode }) {
+  const [lang, setLangState] = useState<Lang>(() => {
+    const saved = typeof window !== "undefined" ? (localStorage.getItem("zahi-lang") as Lang | null) : null;
+    return saved && (translations as any)[saved] ? saved : "ar";
+  });
+
+  const dir = LANGUAGES.find((l) => l.code === lang)?.dir ?? "rtl";
+
+  useEffect(() => {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = dir;
+    localStorage.setItem("zahi-lang", lang);
+  }, [lang, dir]);
+
+  const value = useMemo<Ctx>(
+    () => ({
+      lang,
+      setLang: setLangState,
+      dir,
+      t: (key: string): string => {
+        const keys = key.split('.');
+        let result: any = (translations as any)[lang];
+
+        for (const k of keys) {
+          if (result && typeof result === 'object' && k in result) {
+            result = result[k];
+          } else {
+            let fallback: any = (translations as any).ar;
+            for (const fk of keys) {
+              fallback = fallback?.[fk];
+            }
+            return typeof fallback === 'string' ? fallback : key;
+          }
+        }
+        return typeof result === 'string' ? result : key;
+      },
+    }),
+    [lang, dir]
+  );
+
+  return <I18nContext.Provider value={value}>{children}</I18nContext.Provider>;
+}
+
+export function useI18n() {
+  const ctx = useContext(I18nContext);
+  if (!ctx) throw new Error("useI18n must be used within I18nProvider");
+  return ctx;
+}
