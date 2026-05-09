@@ -11,85 +11,42 @@ import "swiper/css/pagination";
 
 export const Gallery = () => {
   const { t } = useI18n();
-  
-  // جلب البيانات مع التأكد أنها مصفوفة
   const items = t('gallery.items');
   const galleryItems = Array.isArray(items) ? items : [];
 
-  const [lightboxController, setLightboxController] = useState({
-    toggler: false,
-    slide: 1,
-  });
-
-  const openLightboxOnSlide = (number: number) => {
-    setLightboxController({
-      toggler: !lightboxController.toggler,
-      slide: number,
-    });
-  };
+  const [lightboxController, setLightboxController] = useState({ toggler: false, slide: 1 });
 
   return (
     <section id="gallery" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <span className="text-secondary font-semibold tracking-wider uppercase text-sm mb-2 block">
-            {t('gallery.kicker')}
-          </span>
-          <h2 className="text-4xl font-bold text-primary font-amiri mb-4">
-            {t('gallery.title')}
-          </h2>
-          <p className="text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            {t('gallery.desc')}
-          </p>
+          <h2 className="text-4xl font-bold text-primary font-amiri mb-4">{t('gallery.title')}</h2>
+          <p className="text-gray-600 max-w-2xl mx-auto">{t('gallery.desc')}</p>
         </div>
-        
         <Swiper
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={20}
           slidesPerView={1}
-          navigation={true}
+          navigation
           pagination={{ clickable: true }}
-          autoplay={{ delay: 3500, disableOnInteraction: false }}
-          breakpoints={{
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 },
-            1280: { slidesPerView: 4 },
-          }}
-          className="pb-12"
+          breakpoints={{ 640: { slidesPerView: 2 }, 1024: { slidesPerView: 3 } }}
         >
           {galleryItems.map((item: any, index: number) => (
             <SwiperSlide key={index}>
-              <div
-                className="relative group cursor-pointer overflow-hidden rounded-xl aspect-video shadow-md border-4 border-white transition-all hover:border-secondary"
-                onClick={() => openLightboxOnSlide(index + 1)}
+              <div 
+                className="relative cursor-pointer overflow-hidden rounded-xl aspect-video shadow-md"
+                onClick={() => setLightboxController({ toggler: !lightboxController.toggler, slide: index + 1 })}
               >
-                <img
-                  src={item.thumb || item.url}
-                  alt={`Gallery ${index + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                  {item.type === "video" ? (
-                    <div className="bg-secondary p-3 rounded-full shadow-lg">
-                      <Play className="text-white w-8 h-8 fill-white" />
-                    </div>
-                  ) : (
-                    <div className="bg-white/20 p-3 rounded-full backdrop-blur-sm shadow-lg">
-                      <ImageIcon className="text-white w-8 h-8" />
-                    </div>
-                  )}
+                <img src={item.url} alt="" className="w-full h-full object-cover" />
+                <div className="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity">
+                   {item.type === 'video' ? <Play className="text-white w-12 h-12" /> : <ImageIcon className="text-white w-12 h-12" />}
                 </div>
               </div>
             </SwiperSlide>
           ))}
         </Swiper>
       </div>
-
-      <FsLightbox
-        toggler={lightboxController.toggler}
-        sources={galleryItems.map((item: any) => item.url)}
-        slide={lightboxController.slide}
-      />
+      <FsLightbox toggler={lightboxController.toggler} sources={galleryItems.map((i: any) => i.url)} slide={lightboxController.slide} />
     </section>
   );
 };
