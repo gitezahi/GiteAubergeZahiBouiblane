@@ -1,0 +1,21 @@
+
+{
+  "short_name": "دارالضيافة زاهي",
+  "name": "دارالضيافة زاهي بويبلان - Gîte Zahi",
+  "icons": [
+    {
+      "src": "icon-zahi.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-zahi.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#7c8a71",
+  "background_color": "#ffffff"
+}
