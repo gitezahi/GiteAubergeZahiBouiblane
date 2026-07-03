@@ -137,7 +137,7 @@ export const translations: Record<Lang, Dict> = {
     },
     services: {
       kicker: "خدماتنا",
-      title: "ندعوكم لاستكشاف أركان دار الضيافة بعيونكم",
+      title: "ndعوكم لاستكشاف أركان دار الضيافة بعيونكم",
       rooms: { title: "دفء المكان", desc: "إقامة مريحة بطابع جبلي يمنحكم الراحة والسكينة." },
       table: { title: "كرم المائدة", desc: "تعرّفوا على أطباقنا التقليدية التي تُطبخ بشغف ولمسة عائلية أصيلة." },
       adventure: { title: "روح المغامرة", desc: "وثّقنا لكم لحظات من مسارات المشي واستكشاف كنوز الطبيعة المحيطة بنا." },
@@ -198,10 +198,10 @@ export const translations: Record<Lang, Dict> = {
     },
     testimonials: {
       title: "ماذا يقول زوارنا",
-      1: { text: "تجربة رائعة في منزل زاهي مع عائلته. ترحيب حار، ونظافة فائقة، ووجبات تقليدية وعضوية ممتازة." },
-      2: { text: "أماكن إقامة مريحة، ومضيف مضياف للغاية، وموقع جميل. يقع على بعد بضعة مئات من الأمتار من الطريق." },
-      3: { text: "استقبال رائع وحسن الضيافة في قلب جبال بويبلان." },
-      4: { text: "مكان جميل جداً، خدمة جيدة، أشخاص كرماء، مناظر طبيعية رائعة." }
+      1: { name: "Elasbihani Zakarya", country: "المغرب", text: "تجربة رائعة في منزل زاهي مع عائلته. ترحيب حار، ونظافة فائقة، ووجبات تقليدية وعضوية ممتازة." },
+      2: { name: "David Whelchel", country: "الولايات المتحدة", text: "أماكن إقامة مريحة، ومضيف مضياف للغاية، وموقع جميل. يقع على بعد بضعة مئات من الأمتار من الطريق." },
+      3: { name: "Meziane Ayyoub", country: "المغرب", text: "استقبال رائع وحسن الضيافة في قلب جبال بويبلان." },
+      4: { name: "Mohamed Guerboub", country: "المغرب", text: "مكان جميل جداً، خدمة جيدة، أشخاص كرماء، مناظر طبيعية رائعة." }
     }
   },
   fr: {
@@ -228,7 +228,7 @@ export const translations: Record<Lang, Dict> = {
       kicker: "À propos",
       title: "Votre refuge paisible au cœur de l'Atlas",
       p1: "Bienvenue à Dar Diafa Zahi, votre destination idéale pour découvrir le charme du Moyen Atlas.",
-      p2: "Notre projet est né du désir d'offrir une véritable expérience d'hospitalité marocaine authentique.",
+      p2: "Notre proyecto est né du désir d'offrir une véritable expérience d'hospitalité marocaine authentique.",
       p3: "Notre but est d'offrir un refuge tranquille à tous ceux qui cherchent la sérénité loin du bruit."
     },
     services: {
@@ -290,10 +290,10 @@ export const translations: Record<Lang, Dict> = {
     },
     testimonials: {
       title: "Ce que disent nos visiteurs",
-      1: { text: "Superbe expérience chez la famille Zahi. Accueil chaleureux, propreté et repas bio excellents." },
-      2: { text: "Logement confortable, hôte très accueillant et bel emplacement près de la route." },
-      3: { text: "Excellent accueil et hospitalité au cœur des montagnes du Bouiblane." },
-      4: { text: "Très bel endroit, service de qualité, gens généreux et paysages magnifiques." }
+      1: { name: "Elasbihani Zakarya", country: "Maroc", text: "Superbe expérience chez la famille Zahi. Accueil chaleureux, propreté et repas bio excellents." },
+      2: { name: "David Whelchel", country: "USA", text: "Logement confortable, hôte très accueillant et bel emplacement près de la route." },
+      3: { name: "Meziane Ayyoub", country: "Maroc", text: "Excellent accueil et hospitalité au cœur des montagnes du Bouiblane." },
+      4: { name: "Mohamed Guerboub", country: "Maroc", text: "Très bel endroit, service de qualité, gens généreux et paysages magnifiques." }
     }
   },
   en: {
@@ -382,10 +382,10 @@ export const translations: Record<Lang, Dict> = {
     },
     testimonials: {
       title: "What our guests say",
-      1: { text: "Great experience at Zahi's home. Warm welcome, very clean and excellent organic meals." },
-      2: { text: "Comfortable accommodations, very hospitable host, and beautiful location." },
-      3: { text: "Excellent welcome and hospitality in the heart of the Bouiblane mountains." },
-      4: { text: "Very beautiful place, good service, generous people and wonderful landscapes." }
+      1: { name: "Elasbihani Zakarya", country: "Morocco", text: "Great experience at Zahi's home. Warm welcome, very clean and excellent organic meals." },
+      2: { name: "David Whelchel", country: "USA", text: "Comfortable accommodations, very hospitable host, and beautiful location." },
+      3: { name: "Meziane Ayyoub", country: "Morocco", text: "Excellent welcome and hospitality in the heart of the Bouiblane mountains." },
+      4: { name: "Mohamed Guerboub", country: "Morocco", text: "Very beautiful place, good service, generous people and wonderful landscapes." }
     }
   },
   es: {
@@ -448,7 +448,7 @@ export const translations: Record<Lang, Dict> = {
       2: { title: "Hospitalidad familiar", desc: "El huésped es familia. Servicio personal que garantiza privacidad." },
       3: { title: "Platos tradicionales", desc: "Cocina auténtica de montaña con productos locales frescos." },
       4: { title: "Actividades variadas", desc: "Esquí en invierno, camping en verano, cuevas y manantiales." },
-      5: { title: "Calma absoluta", desc: "Ideal para quienes buscan paz mental lejos del ruido urbano." }
+      5: { title: "Calma absoluta", desc: "Idéal para quienes buscan paz mental lejos del ruido urbano." }
     },
     contact: {
       kicker: "Contacto y Mapa",
@@ -474,10 +474,10 @@ export const translations: Record<Lang, Dict> = {
     },
     testimonials: {
       title: "Qué dicen nuestros huéspedes",
-      1: { text: "Gran experiencia en casa de Zahi. Cálida bienvenida y excelente comida orgánica." },
-      2: { text: "Alojamiento confortable, anfitrión muy hospitalario y hermosa ubicación." },
-      3: { text: "Excelente acogida y hospitalidad en el corazón de las montañas de Bouiblane." },
-      4: { text: "Lugar muy hermoso, buen servicio, gente generosa y paisajes maravillosos." }
+      1: { name: "Elasbihani Zakarya", country: "Marruecos", text: "Gran experiencia en casa de Zahi. Cálida bienvenida y excelente comida orgánica." },
+      2: { name: "David Whelchel", country: "EE. UU.", text: "Alojamiento confortable, anfitrión muy hospitalario y hermosa ubicación." },
+      3: { name: "Meziane Ayyoub", country: "Marruecos", text: "Excelente acogida y hospitalidad en el corazón de las montañas de Bouiblane." },
+      4: { name: "Mohamed Guerboub", country: "Marruecos", text: "Lugar muy hermoso, buen servicio, gente generosa y paisajes maravillosos." }
     }
   },
   de: {
@@ -539,7 +539,7 @@ export const translations: Record<Lang, Dict> = {
       1: { title: "Strategische Lage", desc: "Im Herzen von Bouiblane, Panoramablick und einfacher Zugang zu Wanderwegen." },
       2: { title: "Familiäre Gastfreundschaft", desc: "Der Gast ist Familie. Persönlicher Service garantiert Komfort." },
       3: { title: "Traditionelle Gerichte", desc: "Authentische Bergküche mit frischen lokalen Produkten." },
-      4: { title: "Vielfältige Aktivitäten", desc: "Skifahren im Winter, Camping im Sommer, Höhlen und Quellen." },
+      4: { title: "Vielfältige Aktivitäten", desc: "Skifahren im Winter, camping im Sommer, Höhlen und Quellen." },
       5: { title: "Absolute Ruhe", desc: "Ideal für Ruhesuchende abseits des Stadtlärms." }
     },
     contact: {
@@ -551,8 +551,8 @@ export const translations: Record<Lang, Dict> = {
       localTime: "Ortszeit · Taza"
     },
     book: {
-      title: "Bereit für den Berg?",
-      desc: "Kontaktieren Sie uns direkt über WhatsApp, um zu buchen.",
+      title: "Bereit, dem Berg zu begegnen?",
+      desc: "Kontaktieren Sie uns direkt über WhatsApp, um Ihren Aufenthalt zu buchen.",
       cta: "Auf WhatsApp buchen",
       phone: "0673552963"
     },
@@ -566,10 +566,10 @@ export const translations: Record<Lang, Dict> = {
     },
     testimonials: {
       title: "Was unsere Gäste sagen",
-      1: { text: "Tolle Erfahrung bei Familie Zahi. Herzlicher Empfang و sehr saubere und ausgezeichnete Bio-Gerichte." },
-      2: { text: "Komfortable Unterkunft, sehr gastfreundlicher Gastgeber und schöne Lage." },
-      3: { text: "Ausgezeichneter Empfang und Gastfreundschaft im Herzen der Bouiblane-Berge." },
-      4: { text: "Sehr schöner Ort, guter Service, großzügige Menschen und wunderbare Landschaften." }
+      1: { name: "Elasbihani Zakarya", country: "Marokko", text: "Inspirierende Erfahrung bei Familie Zahi. Herzlicher Empfang, Sauberkeit und exzellente Bio-Gerichte." },
+      2: { name: "David Whelchel", country: "USA", text: "Komfortable Unterkunft, sehr gastfreundlicher Gastgeber und wunderschöne Lage nah der Straße." },
+      3: { name: "Meziane Ayyoub", country: "Marokko", text: "Hervorragender Empfang und Gastfreundschaft im Herzen des Bouiblane-Gebirges." },
+      4: { name: "Mohamed Guerboub", country: "Marokko", text: "Sehr schöner Ort, guter Service, großzügige Menschen und wunderschöne Landschaften." }
     }
   }
 };
