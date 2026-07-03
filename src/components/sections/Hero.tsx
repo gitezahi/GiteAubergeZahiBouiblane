@@ -1,6 +1,6 @@
 import { useI18n } from "../../i18n/I18nContext"; // تصحيح المسار ليتوافق مع مجلد i18
 import { Button } from "@/components/ui/button";
-import { ArrowDown, MessageCircle } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import hero from "@/assets/hero-mountain.jpg";
 
 export function Hero() {
@@ -34,7 +34,7 @@ export function Hero() {
           </p>
           
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
-            {/* زر واتساب - محجوز لـ hero.cta */}
+            {/* زر واتساب فقط - محجوز لـ hero.cta */}
             <Button
               asChild
               size="lg"
@@ -45,30 +45,9 @@ export function Hero() {
                 {t("hero.cta")}
               </a>
             </Button>
-            
-            {/* زر اكتشف ضيافتنا - يوجه الآن إلى قسم About بنجاح */}
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="h-12 px-7 text-base bg-cream/70 backdrop-blur border-earth/30 hover:bg-cream"
-            >
-              <a href="#about">
-                {t("hero.discover")}
-                <ArrowDown className="size-4" />
-              </a>
-            </Button>
           </div>
         </div>
       </div>
-
-      <a
-        href="#about"
-        className="absolute bottom-6 left-1/2 -translate-x-1/2 text-foreground/60 animate-float-slow"
-        aria-hidden
-      >
-        <ArrowDown className="size-5" />
-      </a>
     </section>
   );
 }
