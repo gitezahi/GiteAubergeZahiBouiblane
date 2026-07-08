@@ -14,10 +14,10 @@ const AnnouncementBar = () => {
   return (
     <div className="w-full bg-[#7c8a71] text-white py-3 overflow-hidden whitespace-nowrap border-b border-black/10 relative z-[9999]">
       <div className="inline-block animate-marquee px-4">
-        <span className="mx-10 text-sm md:text-base font-medium">🏔️ مأوى زاهي.. نافذتكم على جبال بويبلان الساحرة 🏔️</span>
+        <span className="mx-10 text-sm md:text-base font-medium">🏔️ دار الضيافة زاهي.. نافذتكم على جبال بويبلان الساحرة 🏔️</span>
         <span className="mx-10 text-sm md:text-base font-medium">📱 للوصول إلينا بسرعة، أضف الموقع لشاشتك الرئيسية</span>
         <span className="mx-10 text-sm md:text-base font-medium">🏠 نرحب بكم في قلب الطبيعة والأصالة الأطلسية</span>
-        <span className="mx-10 text-sm md:text-base font-medium">🏔️ مأوى زاهي.. نافذتكم على جبال بويبلان الساحرة 🏔️</span>
+        <span className="mx-10 text-sm md:text-base font-medium">🏔️ دار الضيافة زاهي.. نافذتكم على جبال بويبلان الساحرة 🏔️</span>
       </div>
       <style>{`
         @keyframes marquee {
