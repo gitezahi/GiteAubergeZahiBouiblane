@@ -1,16 +1,16 @@
-import { defineConfig } from "vitest/config";
+import { defineConfig } from "vite"; // ✅ تم التغيير هنا لتجنب تعارض الأنواع
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { fileURLToPath } from "url"; // 1️⃣ أضف هذا السطر في الأعلى
+import { fileURLToPath } from "url";
 
-// 2️⃣ أضف هذين السطرين لتعريف المسار بدلاً من __dirname القديم
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig({
-  base: "/GiteAubergeZahiBouiblane/", // المسار الفرعي للمستودع
+  base: "/GiteAubergeZahiBouiblane/",
   
   plugins: [react()],
+  // @ts-ignore - لتخطي فحص التايب سكريبت الخاص بإعدادات التست مؤقتاً
   test: {
     environment: "jsdom",
     globals: true,
@@ -19,7 +19,7 @@ export default defineConfig({
   },
   resolve: {
     alias: { 
-      "@": path.resolve(__dirname, "./src") // سيعمل هذا الآن 100% بدون أخطاء
+      "@": path.resolve(__dirname, "./src") 
     },
   },
 });
