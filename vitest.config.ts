@@ -3,6 +3,9 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 
 export default defineConfig({
+  // 👇 أضف هذا السطر هنا ليتطابق مع اسم مستودع GitHub الخاص بك
+  base: "/GiteAubergeZahiBouiblane/", 
+  
   plugins: [react()],
   test: {
     environment: "jsdom",
